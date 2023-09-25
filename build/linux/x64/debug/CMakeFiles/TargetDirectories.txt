@@ -1,0 +1,14 @@
+/home/srg/Sarthak/Flutter_Projects/optimized_flutter_homescreenv1/flutter_homescreen/build/linux/x64/debug/CMakeFiles/install/strip.dir
+/home/srg/Sarthak/Flutter_Projects/optimized_flutter_homescreenv1/flutter_homescreen/build/linux/x64/debug/CMakeFiles/install/local.dir
+/home/srg/Sarthak/Flutter_Projects/optimized_flutter_homescreenv1/flutter_homescreen/build/linux/x64/debug/CMakeFiles/install.dir
+/home/srg/Sarthak/Flutter_Projects/optimized_flutter_homescreenv1/flutter_homescreen/build/linux/x64/debug/CMakeFiles/list_install_components.dir
+/home/srg/Sarthak/Flutter_Projects/optimized_flutter_homescreenv1/flutter_homescreen/build/linux/x64/debug/CMakeFiles/rebuild_cache.dir
+/home/srg/Sarthak/Flutter_Projects/optimized_flutter_homescreenv1/flutter_homescreen/build/linux/x64/debug/CMakeFiles/edit_cache.dir
+/home/srg/Sarthak/Flutter_Projects/optimized_flutter_homescreenv1/flutter_homescreen/build/linux/x64/debug/CMakeFiles/flutter_homescreen.dir
+/home/srg/Sarthak/Flutter_Projects/optimized_flutter_homescreenv1/flutter_homescreen/build/linux/x64/debug/flutter/CMakeFiles/install/strip.dir
+/home/srg/Sarthak/Flutter_Projects/optimized_flutter_homescreenv1/flutter_homescreen/build/linux/x64/debug/flutter/CMakeFiles/install/local.dir
+/home/srg/Sarthak/Flutter_Projects/optimized_flutter_homescreenv1/flutter_homescreen/build/linux/x64/debug/flutter/CMakeFiles/install.dir
+/home/srg/Sarthak/Flutter_Projects/optimized_flutter_homescreenv1/flutter_homescreen/build/linux/x64/debug/flutter/CMakeFiles/list_install_components.dir
+/home/srg/Sarthak/Flutter_Projects/optimized_flutter_homescreenv1/flutter_homescreen/build/linux/x64/debug/flutter/CMakeFiles/rebuild_cache.dir
+/home/srg/Sarthak/Flutter_Projects/optimized_flutter_homescreenv1/flutter_homescreen/build/linux/x64/debug/flutter/CMakeFiles/edit_cache.dir
+/home/srg/Sarthak/Flutter_Projects/optimized_flutter_homescreenv1/flutter_homescreen/build/linux/x64/debug/flutter/CMakeFiles/flutter_assemble.dir
