@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
 
         //Setting the pages routes
         routes: {
-          '/': (context) =>  splash_screen(), //MyHomePage(),
+          '/': (context) =>  MyHomePage(),
           '/first':(context)=>MyHomePage(),
           '/second': (context) => powermode(),
           '/third': (context) => regenmode(),
@@ -83,29 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
 
 
-    //mythreadfunc();
-   /* final countprovider=Provider.of<count_provider>(context,listen:false);
-    print("build");
-
-    mythreadfunc();
-
-    countprovider.indicator();
-
-
-    print("indicator function complete");
-
-    Timer.periodic(Duration(milliseconds: 50), (timer) {
-      // print(rawdata);
-      // print(speedD);
-      // print(parsedSpeed.toString());
-      countprovider.loadGaugeValues();
-    });
-
-
-
-
-
-  }*/
+   
     // Delay execution until the splash screen is complete
    
     final countprovider = Provider.of<count_provider>(context, listen: false);
@@ -114,9 +92,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
       if (context != null && countprovider != null) {
         mythreadfunc();
-        countprovider.indicator();
-        print("entering command ");
-        print(rawdata);
+        
+        
         Timer.periodic(Duration(milliseconds: 50), (timer) {
           countprovider.loadGaugeValues();
         });
@@ -649,7 +626,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                               child: Text(
                                                 "${fuelvalue*100}0%"??'0' ,
                                                 style: TextStyle(
-                                                    fontSize: 18,
+                                                    fontSize: 17,
                                                     fontWeight: FontWeight.bold,
                                                     color: Colors.black87),
                                               ),

@@ -539,7 +539,7 @@ class _powermode extends State<powermode> {
                                           child: Text(
                                             "${fuelvalue*100}0%" ,
                                             style: TextStyle(
-                                                fontSize: 18,
+                                                fontSize: 17,
                                                 fontWeight: FontWeight.bold,
                                                 color: Colors.black87),
                                           ),
