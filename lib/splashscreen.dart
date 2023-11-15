@@ -49,7 +49,7 @@ class _splash_screen extends State<splash_screen> {
                 duration: Duration(milliseconds: 3000),
                 child: _visible
                     ? Image.asset(
-                  "assets/images/tvslogo.jpg",
+                  "assets/images/saracalogo.jpg",
                   height: 500,
                   width: 1024,
                 )

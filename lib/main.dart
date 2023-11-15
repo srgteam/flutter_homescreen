@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
 
         //Setting the pages routes
         routes: {
-          '/': (context) =>  MyHomePage(),
+          '/': (context) =>  splash_screen(),
           '/first':(context)=>MyHomePage(),
           '/second': (context) => powermode(),
           '/third': (context) => regenmode(),
