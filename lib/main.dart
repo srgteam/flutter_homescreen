@@ -525,7 +525,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                             children: [
                                               Padding(
                                                 padding:
-                                                const EdgeInsets.only(top: 20.0),
+                                                const EdgeInsets.only(top: 12.0),
                                                 child: Container(
                                                   width: 100,
                                                   height: 100,
