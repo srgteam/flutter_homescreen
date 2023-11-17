@@ -33,7 +33,7 @@ class _regenmode extends State<regenmode> {
           height: 600,
           width: 1024,
           decoration: BoxDecoration(
-              color: Color(0xffF0FFFF),//Colors.black,//Color(0Xff323232),//Color(0Xff7FFFD4),0xffffdbac
+              color: Colors.lightBlue.shade500,//Colors.black,//Color(0Xff323232),//Color(0Xff7FFFD4),0xffffdbac
               borderRadius: BorderRadius.only(
                   topLeft: Radius.elliptical(0, 0),
                   bottomLeft: Radius.elliptical(0, 0),
@@ -87,18 +87,29 @@ class _regenmode extends State<regenmode> {
                             )
                           ]),
                       child: Padding(
-                        padding: const EdgeInsets.only(bottom: 0.0),
-                        child: Column(
+                        padding: const EdgeInsets.only(left: 20.0,right:20),
+
+                        child: Row(
+                          mainAxisAlignment:MainAxisAlignment.spaceEvenly,
                           children: [
                             Text(
-                              DateFormat('E d MMMM').format(DateTime.now()),
+
+                              DateFormat('EEE d MMM').format(DateTime.now())??'0',
                               style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.black),
                             ),
+
+
+
+                            Container(
+                              height:45,width:199,
+                              child:Image.asset("assets/images/saracalogo2.png",fit:BoxFit.fill,alignment:Alignment.center,),
+                            ),
                             Text(
-                              DateFormat('HH:mm:ss').format(DateTime.now()),
+                              DateFormat('HH:mm aa').format(DateTime.now())??'0',
+
                               style: TextStyle(
                                   fontSize: 20,
                                   color: Colors.black,
@@ -266,7 +277,7 @@ class _regenmode extends State<regenmode> {
                                   bottomRight: Radius.elliptical(100, 100)),
                               border: Border.all(
 
-                                    color:Color(0xffF0FFFF),
+                                    color:Colors.white,
                                     width:2, //Color(0xff38eeff),
 
                               ),
@@ -496,7 +507,7 @@ class _regenmode extends State<regenmode> {
                                                     right: 160,
                                                   ),
                                                   child: Text(
-                                                    "DTE${fuelvalue*600}km",
+                                                    "DTE ${fuelvalue*600}km",
                                                     style: TextStyle(
                                                         fontSize: 24,
                                                         fontWeight:
@@ -555,7 +566,7 @@ class _regenmode extends State<regenmode> {
                       child: InkWell(
                         onTap: () {
                           currentScreenIndex=4;
-                          Navigator.push(context,MaterialPageRoute(builder: (context)=>parkingmode()));
+                          Navigator.push(context,MaterialPageRoute(builder: (context)=>MyHomePage()));
                         },
                         child: SizedBox(
                             height: 300,
@@ -565,7 +576,7 @@ class _regenmode extends State<regenmode> {
                                 IconButton(
                                   onPressed: () {
                                     currentScreenIndex=4;
-                                    Navigator.push(context,MaterialPageRoute(builder: (context)=>parkingmode()));
+                                    Navigator.push(context,MaterialPageRoute(builder: (context)=>MyHomePage()));
                                   },
                                   icon: Icon(
                                     Icons.keyboard_double_arrow_right,
@@ -624,8 +635,8 @@ class _regenmode extends State<regenmode> {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Text(
-                              (parsedSpeed != null && parsedSpeed! >= 200)?"Avg speed 200 km/h":"Avg speed ${speedD} km/h"??'0',
-                              style: GoogleFonts.roboto(
+                              (parsedSpeed != null && parsedSpeed! >= 200)?"Avg Speed 200 km/h":"Avg Speed $speedD km/h"??'0',
+                              style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black,
@@ -633,15 +644,15 @@ class _regenmode extends State<regenmode> {
                             ),
                             Text(
                               (odometerr != null )? "ODO $odometerr km":"ODO 00000 km" ?? "0",
-                              style: GoogleFonts.roboto(
+                              style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black,
                               ),
                             ),
                             Text(
-                              (rpmr != null )? "Rpm $rpmr":"Rpm 00000" ?? "0",
-                              style: GoogleFonts.roboto(
+                              (rpmr != null )? "RPM $rpmr":"RPM 00000" ?? "0",
+                              style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black,
@@ -649,7 +660,7 @@ class _regenmode extends State<regenmode> {
                             ),
                             Text(
                               "Service $serviceDr",
-                              style: GoogleFonts.roboto(
+                              style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black,

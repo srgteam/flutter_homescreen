@@ -34,8 +34,7 @@ class _powermode extends State<powermode> {
           height: 600,
           width: 1024,
           decoration: BoxDecoration(
-              color: Color(
-                  0xffffdbac), //Colors.black,//Color(0Xff323232),//Color(0Xff7FFFD4),
+              color: Colors.lightBlue.shade700, //Colors.black,//Color(0Xff323232),//Color(0Xff7FFFD4),
               borderRadius: BorderRadius.only(
                   topLeft: Radius.elliptical(0, 0),
                   bottomLeft: Radius.elliptical(0, 0),
@@ -88,19 +87,29 @@ class _powermode extends State<powermode> {
                             )
                           ]),
                       child: Padding(
-                        padding: const EdgeInsets.only(bottom: 0.0),
-                        child: Column(
+                        padding: const EdgeInsets.only(left: 20.0,right:20),
+
+                        child: Row(
+                          mainAxisAlignment:MainAxisAlignment.spaceEvenly,
                           children: [
                             Text(
-                              DateFormat('E d MMMM').format(DateTime.now()),
+
+                              DateFormat('EEE d MMM').format(DateTime.now())??'0',
                               style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.black),
                             ),
+
+
+
+                            Container(
+                              height:45,width:199,
+                              child:Image.asset("assets/images/saracalogo2.png",fit:BoxFit.fill,alignment:Alignment.center,),
+                            ),
                             Text(
-                             // _updateTime(),
-                              DateFormat('HH:mm:ss').format(DateTime.now()),
+                              DateFormat('HH:mm aa').format(DateTime.now())??'0',
+
                               style: TextStyle(
                                   fontSize: 20,
                                   color: Colors.black,
@@ -269,14 +278,14 @@ class _powermode extends State<powermode> {
                                   topRight: Radius.elliptical(100, 100),
                                   bottomRight: Radius.elliptical(100, 100)),
                               border: Border.all(
-                                color: Color(0xffff6600), //Color(0xff38eeff),
-                                width: 3,
+                                color: Colors.white, //Color(0xff38eeff),
+                                width: 2,
                               ),
                               boxShadow: [
                                 BoxShadow(
-                                  blurRadius: 3,
-                                  spreadRadius: 3,
-                                  color: Color(0xffff6600), //Color(0xff38eeff),
+                                  blurRadius: 11,
+                                  spreadRadius: 11,
+                                  color: Colors.black26, //Color(0xff38eeff),
                                 )
                               ]),
                           //boxdecoration end
@@ -500,7 +509,7 @@ class _powermode extends State<powermode> {
                                                     right: 160,
                                                   ),
                                                   child: Text(
-                                                    "DTE${fuelvalue*600}km",
+                                                    "DTE ${fuelvalue*600}km",
                                                     style: TextStyle(
                                                         fontSize: 24,
                                                         fontWeight:
@@ -629,8 +638,8 @@ class _powermode extends State<powermode> {
                           children: [
                             Text(
 
-                              (parsedSpeed != null && parsedSpeed! >= 200)?"Avg speed 200 km/h":"Avg speed ${speedD} km/h"??'0',
-                              style: GoogleFonts.roboto(
+                              (parsedSpeed != null && parsedSpeed! >= 200)?"Avg Speed 200 km/h":"Avg Speed ${speedD} km/h"??'0',
+                              style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black,
@@ -638,15 +647,15 @@ class _powermode extends State<powermode> {
                             ),
                             Text(
                               (odometerr != null )? "ODO $odometerr km":"ODO 00000 km" ?? "0",
-                              style: GoogleFonts.roboto(
+                              style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black,
                               ),
                             ),
                             Text(
-                              (rpmr != null )? "Rpm $rpmr":"Rpm 00000" ?? "0",
-                              style: GoogleFonts.roboto(
+                              (rpmr != null )? "RPM $rpmr":"RPM 00000" ?? "0",
+                              style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black,
@@ -654,7 +663,7 @@ class _powermode extends State<powermode> {
                             ),
                             Text(
                               "Service $serviceDr",
-                              style: GoogleFonts.roboto(
+                              style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black,

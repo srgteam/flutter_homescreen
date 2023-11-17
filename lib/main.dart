@@ -129,9 +129,9 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 600,
               width: 1024,
               decoration: BoxDecoration(
-                  color: Color(0xffFFFE0), //Color(0xffF8F8F8)
+                  color: Colors.lightBlue.shade900, //Color(0xffF8F8F8)
 
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                       topLeft: Radius.elliptical(0, 0),
                       bottomLeft: Radius.elliptical(0, 0),
                       topRight: Radius.elliptical(0, 0),
@@ -140,7 +140,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     color: Colors.black26, //Color(0xff38eeff),
                     width: 3,
                   ),
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       blurRadius: 11,
                       spreadRadius: 11,
@@ -159,7 +159,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           fit: BoxFit.fill,
                         )
                             : Image.asset(
-                          'assets/images/left.png',
+                          'assets/images/colorleftwhite.png',
                           fit: BoxFit.cover,
                         ),
                         Container(
@@ -168,14 +168,14 @@ class _MyHomePageState extends State<MyHomePage> {
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
                               color: Colors.white,
-                              borderRadius: BorderRadius.only(
+                              borderRadius: const BorderRadius.only(
                                   bottomLeft: Radius.elliptical(400, 400),
                                   bottomRight: Radius.elliptical(400, 400)),
                               border: Border.all(
                                 color: Colors.black26, //Color(0xff38eeff),
                                 width: 3,
                               ),
-                              boxShadow: [
+                              boxShadow: const [
                                 BoxShadow(
                                   blurRadius: 0,
                                   spreadRadius: 0,
@@ -183,21 +183,30 @@ class _MyHomePageState extends State<MyHomePage> {
                                 )
                               ]),
                           child: Padding(
-                            padding: const EdgeInsets.only(bottom: 0.0),
-                            child: Column(
+                            padding: const EdgeInsets.only(left: 20.0,right:20),
+
+                            child: Row(
+                              mainAxisAlignment:MainAxisAlignment.spaceEvenly,
                               children: [
                                 Text(
 
-                                  DateFormat('E d MMMM').format(DateTime.now())??'0',
-                                  style: TextStyle(
+                                  DateFormat('EEE d MMM').format(DateTime.now())??'0',
+                                  style: const TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.black),
                                 ),
-                                Text(
-                                  DateFormat('HH:mm:ss').format(DateTime.now())??'0',
 
-                                  style: TextStyle(
+
+
+                                Container(
+                                  height:45,width:199,
+                                  child:Image.asset("assets/images/saracalogo2.png",fit:BoxFit.fill,alignment:Alignment.center,),
+                                ),
+                                Text(
+                                  DateFormat('HH:mm aa').format(DateTime.now())??'0',
+
+                                  style: const TextStyle(
                                       fontSize: 20,
                                       color: Colors.black,
                                       fontWeight: FontWeight.bold),
@@ -212,12 +221,12 @@ class _MyHomePageState extends State<MyHomePage> {
                           fit: BoxFit.fill,
                         )
                             : Image.asset(
-                          'assets/images/right.png',
+                          'assets/images/right_white.png',
                           fit: BoxFit.fill,
                         ),
                       ],
                     ),
-                    SizedBox(height: 0),
+                    const SizedBox(height: 0),
                     SizedBox(
                       height: 50,
                       width: 800,
@@ -235,7 +244,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 fit: BoxFit.cover,
                               )
                                   : Image.asset(
-                                'assets/images/parking.png',
+                                'assets/images/parking_white.png',
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -251,7 +260,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 fit: BoxFit.cover,
                               )
                                   : Image.asset(
-                                'assets/images/high-beam.png',
+                                'assets/images/high-beam_white.png',
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -267,7 +276,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 fit: BoxFit.cover,
                               )
                                   : Image.asset(
-                                'assets/images/hazard.png',
+                                'assets/images/hazard_white.png',
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -283,7 +292,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 fit: BoxFit.cover,
                               )
                                   : Image.asset(
-                                'assets/images/low-beam.png',
+                                'assets/images/low-beam_white.png',
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -299,7 +308,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 fit: BoxFit.cover,
                               )
                                   : Image.asset(
-                                'assets/images/side_stand.png',
+                                'assets/images/side_stand_white.png',
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -315,10 +324,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                 style: GoogleFonts.roboto(
                                   fontSize: 40,
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.black,
+                                  color: Colors.grey.shade500,
                                 ),
                               ),
-                              //child:side_stand==true?Image.asset('assets/images/colorside_standbg.png',fit:BoxFit.fill,):Image.asset('assets/images/side_stand.png',fit:BoxFit.fill,),
                             ),
                           ),
                         ],
@@ -336,19 +344,19 @@ class _MyHomePageState extends State<MyHomePage> {
                               decoration: BoxDecoration(
                                   color: Colors
                                       .white, //Color(0xffCCCCFF),//Color(0xff38eeff),
-                                  borderRadius: BorderRadius.only(
+                                  borderRadius: const BorderRadius.only(
                                       topLeft: Radius.circular(800),
                                       bottomLeft: Radius.circular(800),
                                       topRight: Radius.elliptical(100, 100),
                                       bottomRight: Radius.elliptical(100, 100)),
                                   border: Border.all(
-                                    color: Colors.black26, //Color(0xff38eeff),
-                                    width: 3,
+                                    color: Colors.white, //Color(0xff38eeff),
+                                    width: 2,
                                   ),
-                                  boxShadow: [
+                                  boxShadow: const [
                                     BoxShadow(
-                                      blurRadius: 3,
-                                      spreadRadius: 3,
+                                      blurRadius: 11,
+                                      spreadRadius: 11,
                                       color: Colors.black26, //Color(0xff38eeff),
                                     )
                                   ]),
@@ -403,7 +411,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                               endWidth: 5,
                                             ),
                                           ],
-                                          axisLineStyle: AxisLineStyle(
+                                          axisLineStyle: const AxisLineStyle(
                                               thickness: 40,
                                               color:
                                               Colors.black12), //Color(0xffEC5800)
@@ -429,7 +437,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                             //MarkerPointer(value:value,markerOffset:35,markerWidth:40,markerType: MarkerType.image,markerHeight:50,color:get_guage_color(),borderWidth:0,imageUrl:"assets/images/bike_blue.png",)//Color(0xffFCD12A)                //0xff0FFF50 for eco mode
                                           ],
                                           annotations: <GaugeAnnotation>[
-                                            GaugeAnnotation(
+                                            const GaugeAnnotation(
                                               widget: Text(
                                                 "ECO",
                                                 style: TextStyle(
@@ -443,7 +451,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                             GaugeAnnotation(
                                               widget: Text(
                                                 (parsedSpeed != null && parsedSpeed! >= 200)?"200":parsedSpeed.toString() ?? "0",
-                                                style: TextStyle(
+                                                style: const TextStyle(
                                                     fontSize: 60,
                                                     fontWeight: FontWeight.bold,
                                                     color: Color(0xffFF7417)),
@@ -451,7 +459,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                               angle: -90,
                                               positionFactor: 0.1,
                                             ),
-                                            GaugeAnnotation(
+                                            const GaugeAnnotation(
                                               widget: Text(
                                                 "kmph",
                                                 style: TextStyle(
@@ -477,33 +485,27 @@ class _MyHomePageState extends State<MyHomePage> {
                                           mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                           children: [
-                                            Stack(
-                                              children: [
-                                                Container(
-                                                  alignment:Alignment.topLeft,
-                                                  height:40,width:80,
-                                                  child: Icon(Icons.call,
-                                                      size: 40, color: Color(0xff323232)),
-                                                ),
-
-                                                Positioned(left:20,child: Text("")),
-                                              ],
+                                            Container(
+                                              alignment:Alignment.topLeft,
+                                              height:40,width:80,
+                                              child: const Icon(Icons.call,
+                                                  size: 40, color: Color(0xff323232)),
                                             ),
-                                            Padding(
+                                            const Padding(
                                               padding:
-                                              const EdgeInsets.only(left: 15.0),
+                                              EdgeInsets.only(left: 15.0),
                                               child: Icon(Icons.message,
                                                   size: 40, color: Color(0xff323232)),
                                             ),
-                                            Padding(
+                                            const Padding(
                                               padding:
-                                              const EdgeInsets.only(left: 55.0),
+                                              EdgeInsets.only(left: 55.0),
                                               child: Icon(Icons.bluetooth,
                                                   size: 40, color: Color(0xff323232)),
                                             ),
-                                            Padding(
+                                            const Padding(
                                               padding:
-                                              const EdgeInsets.only(left: 55.0),
+                                              EdgeInsets.only(left: 55.0),
                                               child: Icon(Icons.network_cell,
                                                   size: 40, color: Color(0xff323232)),
                                             ),
@@ -530,7 +532,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                                   width: 100,
                                                   height: 100,
                                                   color: Colors.white,
-                                                  child: Icon(
+                                                  child: const Icon(
                                                     Icons.music_note,
                                                     size: 100,
                                                     color: Colors.blue,
@@ -539,13 +541,13 @@ class _MyHomePageState extends State<MyHomePage> {
                                               ),
                                               Text(
                                                 songTitle,
-                                                style: TextStyle(
+                                                style: const TextStyle(
                                                     fontSize: 20,
                                                     fontWeight: FontWeight.bold),
                                               ),
                                               Text(
                                                 Movie,
-                                                style: TextStyle(
+                                                style: const TextStyle(
                                                     fontSize: 16, color: Colors.grey),
                                               ),
                                               Row(
@@ -587,8 +589,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                                         right: 160,
                                                       ),
                                                       child: Text(
-                                                        "DTE${fuelvalue*600}km"??'0',
-                                                        style: TextStyle(
+                                                        "DTE ${fuelvalue*600}km"??'0',
+                                                        style: const TextStyle(
                                                             fontSize: 24,
                                                             fontWeight:
                                                             FontWeight.bold,
@@ -600,7 +602,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                                       child: LinearProgressIndicator(
                                                         value:fuelvalue ,///
                                                         valueColor:
-                                                        AlwaysStoppedAnimation(
+                                                        const AlwaysStoppedAnimation(
                                                             Color(0xffFCD12A)),
                                                         backgroundColor: Colors.grey,
                                                       ),
@@ -625,7 +627,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                               padding: const EdgeInsets.only(top: 20),
                                               child: Text(
                                                 "${fuelvalue*100}0%"??'0' ,
-                                                style: TextStyle(
+                                                style: const TextStyle(
                                                     fontSize: 17,
                                                     fontWeight: FontWeight.bold,
                                                     color: Colors.black87),
@@ -659,7 +661,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                         Navigator.of(context).pushReplacementNamed('/second');
                                         Navigator.push(context,MaterialPageRoute(builder: (context)=>powermode()));
                                       },
-                                      icon: Icon(
+                                      icon: const Icon(
                                         Icons.keyboard_double_arrow_right,
                                         size: 80,
                                         color: Colors.grey,
@@ -676,12 +678,12 @@ class _MyHomePageState extends State<MyHomePage> {
                       height: 30,
                       alignment: Alignment.center,
                       // Set the background color for the container
-                      child: Row(
+                      child: const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [],
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 0,
                     ),
                     Row(
@@ -695,7 +697,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                             decoration: BoxDecoration(
                                 color: Colors.white,
-                                borderRadius: BorderRadius.only(
+                                borderRadius: const BorderRadius.only(
                                     topLeft: Radius.circular(100),
                                     bottomLeft: Radius.circular(100),
                                     topRight: Radius.circular(100),
@@ -716,8 +718,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
                                 Text(
-                                  (parsedSpeed != null && parsedSpeed! >= 200)?"Avg speed 200 km/h":"Avg speed ${speedD} km/h"??'0',
-                                  style: GoogleFonts.roboto(
+                                  (parsedSpeed != null && parsedSpeed! >= 200)?"Avg Speed 200 km/h":"Avg Speed ${speedD} km/h"??'0',
+                                  style: TextStyle(   //previous GoogleFonts.roboto
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black,
@@ -725,7 +727,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 ),
                                 Text(
                                   (odometerr != null )? "ODO $odometerr km":"ODO 00000 km" ?? "0",// "ODO $odometerr km"??'0',
-                                  style: GoogleFonts.roboto(
+                                  style: TextStyle(
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black,
@@ -733,9 +735,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                 ),
                                 Text(
 
-                                  (rpmr != null )? "Rpm $rpmr":"Rpm 00000" ?? "0",
+                                  (rpmr != null )? "RPM $rpmr":"RPM 00000" ?? "0",
 
-                                  style: GoogleFonts.roboto(
+                                  style: const TextStyle(
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black,
@@ -743,7 +745,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 ),
                                 Text(
                                   "Service $serviceD"??'0',
-                                  style: GoogleFonts.roboto(
+                                  style: const TextStyle(
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black,
