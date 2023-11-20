@@ -91,6 +91,47 @@ bool flag=false ;
 
 
 
+
+//variables for tpms
+
+String xxy='';
+double xy =0;
+
+String xxy2= '';
+double xy2=0;
+
+String xxy3='';
+double xy3=0;
+
+
+
+
+//my tpms logic sensor 2
+
+
+String aab= '';
+double ab =  0;
+
+String aab2= '';
+double ab2=0;
+
+String aab3='';
+double ab3=0;
+
+
+
+
+
+
+String psi1='0';
+String psi2='0';
+String temp1='0';
+String temp2='0';
+String tpms_battery='0';
+String tpms_battery2='0';
+
+///////////////////////////////////////////////
+
 /*The get gauge color function will return the color
 * of the gauge according to the incoming value*/
 Color get_guage_color(){

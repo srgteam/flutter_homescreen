@@ -13,6 +13,36 @@ class count_provider extends ChangeNotifier{
    Future<void> loadGaugeValues() async {
      try {
 
+       List<String> My_data_lines = rawdata.toString().split('\n');
+       String first_line_data =" ";
+       String second_line_data= " ";
+
+       for(String vehicle_data in My_data_lines)
+         {
+
+           if(vehicle_data.isNotEmpty && vehicle_data.startsWith('*E') && vehicle_data.endsWith('K#') && vehicle_data!=null)
+             {
+               first_line_data=vehicle_data ;
+             }
+
+           else if(vehicle_data.isNotEmpty && vehicle_data.startsWith('@Q') && vehicle_data.endsWith('&P') && vehicle_data!=null)
+
+           {
+
+             second_line_data=vehicle_data ;
+
+
+           }
+
+           else {
+
+             second_line_data="@Q010101010101&P" ;
+           }
+         }
+
+
+
+
 
 
          String line = rawdata.toString();
@@ -23,40 +53,54 @@ class count_provider extends ChangeNotifier{
          //    await Future.delayed(const Duration(milliseconds: 1));
 
 
-         if (line.isNotEmpty && line.startsWith('*E') && line.endsWith('K#') && line!=null ) {
-           rpmD = line.substring(2, 7);
-           // print('rpm is $rpmD');
-           speedD = line.substring(8, 11);     //replaceAll(" ", "");
+         if (first_line_data.isNotEmpty && second_line_data.isNotEmpty ) {
+           rpmD = first_line_data.substring(2, 7);
+           speedD = first_line_data.substring(8, 11);
+           fuelLevelD = first_line_data.substring(12, 13);
+           odometerD = first_line_data.substring(14, 20);
+           headLampD = first_line_data.substring(21, 22);
+           gearD = first_line_data.substring(23, 24) ?? 'N';
+           leftIndicatorD = first_line_data.substring(25, 26);
+           rightIndicatorD =first_line_data.substring(27, 28);
+           modeD = first_line_data.substring(29, 30);
+           serviceD =first_line_data.substring(31, 32);
+           batteryD =first_line_data.substring(32, 34);
+           assistD = first_line_data.substring(34, 35);
+           KeyIPD = first_line_data.substring(35, 36);
 
-           // print('speed is $speedD');
-           fuelLevelD = line.substring(12, 13);
-           //print('fuel level is $fuelLevelD');
 
-           odometerD = line.substring(14, 20);
-           //print('odo meter rating is $odometerD');
-           headLampD = line.substring(21, 22);
-           // print('headlamp status is $headLampD');
-           gearD = line.substring(23, 24) ?? 'N';
-           // print('gear status is $gearD');
-           leftIndicatorD = line.substring(25, 26);
-           // print('left indicator status is $leftIndicatorD');
-           rightIndicatorD = line.substring(27, 28);
-           //print('right indicator status is $rightIndicatorD');
-           modeD = line.substring(29, 30);
-           // print('mode status is $rightIndicatorD');
-           serviceD = line.substring(31, 32);
-           // print('serviceD status is $serviceD');
-           batteryD = line.substring(32, 34);
-           // print('batteryD status is $batteryD');
-           assistD = line.substring(34, 35);
-           // print('assistD status is $assistD');
-           KeyIPD = line.substring(35, 36);
-         } else if
-            (line.isNotEmpty) {
-             // print('data frame is incorrect');
-            // line = line;
+           //my rpms logic sensor 1
 
-           } else {
+           String xxy=(int.parse(second_line_data.substring(2,4),radix:16)).toString();
+           double xy = (double.tryParse(xxy)! * 2.0 - 90.0)*0.145;  //will pass in to psi1 as string
+
+           String xxy2= (int.parse(second_line_data.substring(4,6),radix:16)).toString();
+           double xy2=(double.tryParse(xxy)! -40); //pass to temprature
+
+           String xxy3=(int.parse(second_line_data.substring(6,8),radix:16)).toString();
+           double xy3=(double.tryParse(xxy)! *100/127);  //pass to  TPMS battery
+
+
+
+
+           //my tpms logic sensor 2
+
+
+           String aab=(int.parse(second_line_data.substring(8,10),radix:16)).toString();
+           double ab = (double.tryParse(xxy)! * 2.0 - 90.0)*0.145;  //will pass in to psi2 as string
+
+           String aab2= (int.parse(second_line_data.substring(10,12),radix:16)).toString();
+           double ab2=(double.tryParse(xxy)! -40); //pass to temprature2
+
+           String aab3=(int.parse(second_line_data.substring(12,14),radix:16)).toString();
+           double ab3=(double.tryParse(xxy)! *100/127);  //pass to  TPMS battery2
+
+
+
+
+
+           ////////////////
+         }  else {
              rpmD = '00000';
              speedD = '000';
              fuelLevelD = '0';
@@ -110,6 +154,26 @@ class count_provider extends ChangeNotifier{
          parkingr == '1' ? parking_mode = true : parking_mode = false;
 
 
+
+
+
+         //passing the tpms values
+
+
+        psi1=xy.toStringAsFixed(1);
+        psi2=ab.toStringAsFixed(1);
+
+        temp1=xy2.toStringAsFixed(1);
+        temp2=ab2.toStringAsFixed(1);
+
+        tpms_battery=xy3.toStringAsFixed(1);
+        tpms_battery2=ab3.toStringAsFixed(1);
+
+
+
+
+
+
          notifyListeners();
 
 
@@ -123,35 +187,7 @@ class count_provider extends ChangeNotifier{
    }
 
 
-   void indicator() {
-     if (timer1 == null) {
-       timer1 = Timer.periodic(Duration(milliseconds: 1000), (_) {
 
-           if (i <= 6) {
-
-             left = !left;
-             right = !right;
-             hazard = !hazard;
-             malfunction = !malfunction;
-             highbeam = !highbeam;
-             side_stand = !side_stand;
-             parking_mode = !parking_mode;
-             parking_brake = !parking_brake;
-             headlamp=!headlamp;
-
-             i = i + 1;
-             notifyListeners();
-           } else {
-             indicator_flag=true;
-             timer1?.cancel();
-             notifyListeners();
-           }
-
-
-         });
-
-     }
-   }
 
 
 

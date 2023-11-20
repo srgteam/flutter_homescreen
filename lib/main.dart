@@ -523,55 +523,84 @@ class _MyHomePageState extends State<MyHomePage> {
                                           height: 204,
                                           width: 420,
                                           color: Colors.white,
-                                          child: Column(
+                                          child: Row(
+                                            mainAxisAlignment:MainAxisAlignment.spaceBetween,
                                             children: [
-                                              Padding(
-                                                padding:
-                                                const EdgeInsets.only(top: 12.0),
-                                                child: Container(
-                                                  width: 100,
-                                                  height: 100,
-                                                  color: Colors.white,
-                                                  child: const Icon(
-                                                    Icons.music_note,
-                                                    size: 100,
-                                                    color: Colors.blue,
-                                                  ),
-                                                ),
-                                              ),
-                                              Text(
-                                                songTitle,
-                                                style: const TextStyle(
-                                                    fontSize: 20,
-                                                    fontWeight: FontWeight.bold),
-                                              ),
-                                              Text(
-                                                Movie,
-                                                style: const TextStyle(
-                                                    fontSize: 16, color: Colors.grey),
-                                              ),
-                                              Row(
-                                                mainAxisAlignment:
-                                                MainAxisAlignment.spaceEvenly,
+
+                                              Column(
+                                                mainAxisAlignment:MainAxisAlignment.start,
+                                                crossAxisAlignment:CrossAxisAlignment.start,
                                                 children: [
-                                                  IconButton(
-                                                    icon: Icon(Icons.skip_previous),
-                                                    onPressed: () {
-                                                      // Implement skip to previous logic
-                                                    },
+                                                  Text((psi1 != null )? "psi1 $psi1 ":"psi1 00000 " ?? "0"),
+                                                  Text((temp1 != null )? "temp1 $psi1 ":"temp1 00000 " ?? "0"),
+                                                  Text((tpms_battery != null )? "tb1 $tpms_battery":"tb1 00000 " ?? "0"),
+                                                ],
+                                              ),
+                                              Column(
+
+                                                children: [
+
+
+                                                  Padding(
+                                                    padding:
+                                                    const EdgeInsets.only(top: 12.0),
+                                                    child: Container(
+                                                      width: 100,
+                                                      height: 100,
+                                                      color: Colors.white,
+                                                      child: const Icon(
+                                                        Icons.music_note,
+                                                        size: 100,
+                                                        color: Colors.blue,
+                                                      ),
+                                                    ),
                                                   ),
-                                                  IconButton(
-                                                    icon: Icon(Icons.pause),
-                                                    onPressed: () {
-                                                      // Implement pause logic
-                                                    },
+                                                  Text(
+                                                    songTitle,
+                                                    style: const TextStyle(
+                                                        fontSize: 20,
+                                                        fontWeight: FontWeight.bold),
                                                   ),
-                                                  IconButton(
-                                                    icon: Icon(Icons.skip_next),
-                                                    onPressed: () {
-                                                      // Implement skip to next logic
-                                                    },
+                                                  Text(
+                                                    Movie,
+                                                    style: const TextStyle(
+                                                        fontSize: 16, color: Colors.grey),
                                                   ),
+                                                  Row(
+                                                    mainAxisAlignment:
+                                                    MainAxisAlignment.spaceEvenly,
+                                                    children: [
+                                                      IconButton(
+                                                        icon: Icon(Icons.skip_previous),
+                                                        onPressed: () {
+                                                          // Implement skip to previous logic
+                                                        },
+                                                      ),
+                                                      IconButton(
+                                                        icon: Icon(Icons.pause),
+                                                        onPressed: () {
+                                                          // Implement pause logic
+                                                        },
+                                                      ),
+                                                      IconButton(
+                                                        icon: Icon(Icons.skip_next),
+                                                        onPressed: () {
+                                                          // Implement skip to next logic
+                                                        },
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ],
+                                              ),
+
+
+                                              Column(
+                                                mainAxisAlignment:MainAxisAlignment.start,
+                                                crossAxisAlignment:CrossAxisAlignment.start,
+                                                children: [
+                                                  Text((psi2 != null )? "psi2 $psi2 ":"psi2 00000 " ?? "0"),
+                                                  Text((temp2 != null )? "temp2 $psi2 ":"temp2 00000 " ?? "0"),
+                                                  Text((tpms_battery2 != null )? "tb2 $tpms_battery2 ":"tb2 00000 " ?? "0"),
                                                 ],
                                               ),
                                             ],
@@ -726,7 +755,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   ),
                                 ),
                                 Text(
-                                  (odometerr != null )? "ODO $odometerr km":"ODO 00000 km" ?? "0",// "ODO $odometerr km"??'0',
+                                  (odometerr != null )? "ODO $odometerr km":"ODO 00000 km" ?? "0",
                                   style: TextStyle(
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
