@@ -13,39 +13,13 @@ class count_provider extends ChangeNotifier{
    Future<void> loadGaugeValues() async {
      try {
 
-       List<String> My_data_lines = rawdata.toString().split('\n');
-       String first_line_data =" ";
-       String second_line_data= " ";
-
-       for(String vehicle_data in My_data_lines)
-         {
-
-           if(vehicle_data.isNotEmpty && vehicle_data.startsWith('*E') && vehicle_data.endsWith('K#') && vehicle_data!=null)
-             {
-               first_line_data=vehicle_data ;
-             }
-
-           else if(vehicle_data.isNotEmpty && vehicle_data.startsWith('@Q') && vehicle_data.endsWith('&P') && vehicle_data!=null)
-
-           {
-
-             second_line_data=vehicle_data ;
-
-
-           }
-
-           else {
-
-             second_line_data="@Q010101010101&P" ;
-           }
-         }
+       String line = rawdata.toString();
 
 
 
 
 
 
-         String line = rawdata.toString();
 
 
 
@@ -53,31 +27,32 @@ class count_provider extends ChangeNotifier{
          //    await Future.delayed(const Duration(milliseconds: 1));
 
 
-         if (first_line_data.isNotEmpty && second_line_data.isNotEmpty ) {
-           rpmD = first_line_data.substring(2, 7);
-           speedD = first_line_data.substring(8, 11);
-           fuelLevelD = first_line_data.substring(12, 13);
-           odometerD = first_line_data.substring(14, 20);
-           headLampD = first_line_data.substring(21, 22);
-           gearD = first_line_data.substring(23, 24) ?? 'N';
-           leftIndicatorD = first_line_data.substring(25, 26);
-           rightIndicatorD =first_line_data.substring(27, 28);
-           modeD = first_line_data.substring(29, 30);
-           serviceD =first_line_data.substring(31, 32);
-           batteryD =first_line_data.substring(32, 34);
-           assistD = first_line_data.substring(34, 35);
-           KeyIPD = first_line_data.substring(35, 36);
+       if (line.isNotEmpty && line.startsWith('*E') && line.endsWith('&P') && line!=null ){
+           rpmD = line.substring(2, 7);
+           print(rpmD);
+           speedD = line.substring(8, 11);
+           fuelLevelD = line.substring(12, 13);
+           odometerD = line.substring(14, 20);
+           headLampD = line.substring(21, 22);
+           gearD = line.substring(23, 24) ?? 'N';
+           leftIndicatorD =line.substring(25, 26);
+           rightIndicatorD =line.substring(27, 28);
+           modeD = line.substring(29, 30);
+           serviceD =line.substring(31, 32);
+           batteryD =line.substring(32, 34);
+           assistD = line.substring(34, 35);
+           KeyIPD = line.substring(35, 36);
 
 
            //my rpms logic sensor 1
 
-           String xxy=(int.parse(second_line_data.substring(2,4),radix:16)).toString();
+           String xxy=(int.parse(line.substring(40,42),radix:16)).toString();
            double xy = (double.tryParse(xxy)! * 2.0 - 90.0)*0.145;  //will pass in to psi1 as string
 
-           String xxy2= (int.parse(second_line_data.substring(4,6),radix:16)).toString();
+           String xxy2= (int.parse(line.substring(42,44),radix:16)).toString();
            double xy2=(double.tryParse(xxy)! -40); //pass to temprature
 
-           String xxy3=(int.parse(second_line_data.substring(6,8),radix:16)).toString();
+           String xxy3=(int.parse(line.substring(44,46),radix:16)).toString();
            double xy3=(double.tryParse(xxy)! *100/127);  //pass to  TPMS battery
 
 
@@ -86,13 +61,13 @@ class count_provider extends ChangeNotifier{
            //my tpms logic sensor 2
 
 
-           String aab=(int.parse(second_line_data.substring(8,10),radix:16)).toString();
+           String aab=(int.parse(line.substring(46,48),radix:16)).toString();
            double ab = (double.tryParse(xxy)! * 2.0 - 90.0)*0.145;  //will pass in to psi2 as string
 
-           String aab2= (int.parse(second_line_data.substring(10,12),radix:16)).toString();
+           String aab2= (int.parse(line.substring(48,50),radix:16)).toString();
            double ab2=(double.tryParse(xxy)! -40); //pass to temprature2
 
-           String aab3=(int.parse(second_line_data.substring(12,14),radix:16)).toString();
+           String aab3=(int.parse(line.substring(50,52),radix:16)).toString();
            double ab3=(double.tryParse(xxy)! *100/127);  //pass to  TPMS battery2
 
 
