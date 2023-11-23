@@ -448,11 +448,11 @@ class _powermode extends State<powermode> {
                                         children: [
 
                                           Column(
-                                            mainAxisAlignment:MainAxisAlignment.start,
+                                            mainAxisAlignment:MainAxisAlignment.spaceBetween,
                                             crossAxisAlignment:CrossAxisAlignment.start,
                                             children: [
                                               Text((psi1 != null )? "psi1 $psi1 ":"psi1 00000 " ?? "0"),
-                                              Text((temp1 != null )? "temp1 $psi1 ":"temp1 00000 " ?? "0"),
+                                              Text((temp1 != null )? "temp1 $temp1 ":"temp1 00000 " ?? "0"),
                                               Text((tpms_battery != null )? "tb1 $tpms_battery":"tb1 00000 " ?? "0"),
                                             ],
                                           ),
@@ -514,11 +514,11 @@ class _powermode extends State<powermode> {
 
 
                                           Column(
-                                            mainAxisAlignment:MainAxisAlignment.start,
+                                            mainAxisAlignment:MainAxisAlignment.spaceBetween,
                                             crossAxisAlignment:CrossAxisAlignment.start,
                                             children: [
                                               Text((psi2 != null )? "psi2 $psi2 ":"psi2 00000 " ?? "0"),
-                                              Text((temp2 != null )? "temp2 $psi2 ":"temp2 00000 " ?? "0"),
+                                              Text((temp2 != null )? "temp2 $temp2 ":"temp2 00000 " ?? "0"),
                                               Text((tpms_battery2 != null )? "tb2 $tpms_battery2 ":"tb2 00000 " ?? "0"),
                                             ],
                                           ),

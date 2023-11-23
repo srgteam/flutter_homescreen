@@ -2,9 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'dart:io' ;
-import 'dart:typed_data';
-import 'package:path_provider/path_provider.dart';
 import 'package:thread/thread.dart';
 import 'package:http/http.dart' as http;
 
@@ -50,7 +47,7 @@ int fuelLevelr=0;
 String rpmD = '0';
 
 String speedD = '0';
-String speedr='0'??'0';
+String speedr='0';
 String odometerD = '0';
 
 String headLampD = '0';
@@ -217,7 +214,7 @@ final thread = Thread((events) {
   events.on('data', (String data) async {
     while(true) {
       await Future.delayed(const Duration(milliseconds: 50));
-      httpdata = await http.read(Uri.http('127.0.0.1:2001', ''));              //"*E12345 150 1 123456 1 0 1 1 1 0 0114k#";
+      httpdata = await http.read(Uri.http('127.0.0.1:2001', ''));              //"*E12345 150 1 123456 1 0 1 1 1 0 0114k#@Q111111111111&P";
       //print(httpdata);
 
       events.emit('realtime', '$httpdata');

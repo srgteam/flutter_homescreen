@@ -87,7 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // Delay execution until the splash screen is complete
    
     final countprovider = Provider.of<count_provider>(context, listen: false);
-      // Ensure there's a valid context and countprovider before using them
+
 
 
       if (context != null && countprovider != null) {
@@ -528,11 +528,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                             children: [
 
                                               Column(
-                                                mainAxisAlignment:MainAxisAlignment.start,
+                                                mainAxisAlignment:MainAxisAlignment.spaceBetween,
                                                 crossAxisAlignment:CrossAxisAlignment.start,
                                                 children: [
-                                                  Text((psi1 != null )? "psi1 $psi1 ":"psi1 00000 " ?? "0"),
-                                                  Text((temp1 != null )? "temp1 $psi1 ":"temp1 00000 " ?? "0"),
+                                                  Text((psi1 != null )? "psi1 $psi1 ":"psi1 00000 " ?? "0",),
+                                                  Text((temp1 != null )? "temp1 $temp1 ":"temp1 00000 " ?? "0"),
                                                   Text((tpms_battery != null )? "tb1 $tpms_battery":"tb1 00000 " ?? "0"),
                                                 ],
                                               ),
@@ -595,12 +595,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
                                               Column(
-                                                mainAxisAlignment:MainAxisAlignment.start,
+                                                mainAxisAlignment:MainAxisAlignment.spaceBetween,
                                                 crossAxisAlignment:CrossAxisAlignment.start,
                                                 children: [
-                                                  Text((psi2 != null )? "psi2 $psi2 ":"psi2 00000 " ?? "0"),
-                                                  Text((temp2 != null )? "temp2 $psi2 ":"temp2 00000 " ?? "0"),
-                                                  Text((tpms_battery2 != null )? "tb2 $tpms_battery2 ":"tb2 00000 " ?? "0"),
+                                                  Text((psi2 != null )? "psi2 $psi2 ":"psi2 00000 " ?? "0",),
+                                                  Text((temp2 != null )? "temp2 $temp2 ":"temp2 00000 " ?? "0",),
+                                                  Text((tpms_battery2 != null )? "tb2 $tpms_battery2 ":"tb2 00000 " ?? "0",),
                                                 ],
                                               ),
                                             ],

@@ -16,20 +16,8 @@ class count_provider extends ChangeNotifier{
        String line = rawdata.toString();
 
 
-
-
-
-
-
-
-
-
-         //    await Future.delayed(const Duration(milliseconds: 1));
-
-
        if (line.isNotEmpty && line.startsWith('*E') && line.endsWith('&P') && line!=null ){
            rpmD = line.substring(2, 7);
-           print(rpmD);
            speedD = line.substring(8, 11);
            fuelLevelD = line.substring(12, 13);
            odometerD = line.substring(14, 20);
@@ -46,14 +34,16 @@ class count_provider extends ChangeNotifier{
 
            //my rpms logic sensor 1
 
-           String xxy=(int.parse(line.substring(40,42),radix:16)).toString();
-           double xy = (double.tryParse(xxy)! * 2.0 - 90.0)*0.145;  //will pass in to psi1 as string
+            xxy=(int.parse(line.substring(41,43),radix:16)).toString();
 
-           String xxy2= (int.parse(line.substring(42,44),radix:16)).toString();
-           double xy2=(double.tryParse(xxy)! -40); //pass to temprature
+            xy = (double.tryParse(xxy)! * 2.0 - 90.0)*0.145;  //will pass in to psi1 as string
 
-           String xxy3=(int.parse(line.substring(44,46),radix:16)).toString();
-           double xy3=(double.tryParse(xxy)! *100/127);  //pass to  TPMS battery
+
+            xxy2= (int.parse(line.substring(43,45),radix:16)).toString();
+            xy2=(double.tryParse(xxy2)! -40); //pass to temprature
+
+            xxy3=(int.parse(line.substring(45,47),radix:16)).toString();
+            xy3=(double.tryParse(xxy3)! *100/127);  //pass to  TPMS battery
 
 
 
@@ -61,14 +51,14 @@ class count_provider extends ChangeNotifier{
            //my tpms logic sensor 2
 
 
-           String aab=(int.parse(line.substring(46,48),radix:16)).toString();
-           double ab = (double.tryParse(xxy)! * 2.0 - 90.0)*0.145;  //will pass in to psi2 as string
+           aab=(int.parse(line.substring(47,49),radix:16)).toString();
+           ab = (double.tryParse(aab)! * 2.0 - 90.0)*0.145;  //will pass in to psi2 as string
 
-           String aab2= (int.parse(line.substring(48,50),radix:16)).toString();
-           double ab2=(double.tryParse(xxy)! -40); //pass to temprature2
+           aab2= (int.parse(line.substring(49,51),radix:16)).toString();
+           ab2=(double.tryParse(aab2)! -40); //pass to temprature2
 
-           String aab3=(int.parse(line.substring(50,52),radix:16)).toString();
-           double ab3=(double.tryParse(xxy)! *100/127);  //pass to  TPMS battery2
+           aab3=(int.parse(line.substring(51,53),radix:16)).toString();
+           ab3=(double.tryParse(aab3)! *100/127);  //pass to  TPMS battery2
 
 
 
@@ -101,7 +91,6 @@ class count_provider extends ChangeNotifier{
          else {
            fuelvalue = 0;
          }
-         //speedr = speedD??'0';
          parsedSpeed = double.tryParse(speedD)??0;
          odometerr = int.tryParse(odometerD)??00000;
          gearr = int.tryParse(gearD);
@@ -134,11 +123,12 @@ class count_provider extends ChangeNotifier{
 
          //passing the tpms values
 
-
         psi1=xy.toStringAsFixed(1);
+
         psi2=ab.toStringAsFixed(1);
 
         temp1=xy2.toStringAsFixed(1);
+
         temp2=ab2.toStringAsFixed(1);
 
         tpms_battery=xy3.toStringAsFixed(1);
@@ -152,7 +142,6 @@ class count_provider extends ChangeNotifier{
          notifyListeners();
 
 
-         // });
 
 
 
@@ -160,13 +149,6 @@ class count_provider extends ChangeNotifier{
        print('Error loading gauge values: $e');
      }
    }
-
-
-
-
-
-
-
 
 
 
