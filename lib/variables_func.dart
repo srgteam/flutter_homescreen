@@ -99,6 +99,7 @@ double xy2=0;
 
 String xxy3='';
 double xy3=0;
+String garbage_data= "xxxxxx" ;
 
 
 

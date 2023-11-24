@@ -33,32 +33,72 @@ class count_provider extends ChangeNotifier{
 
 
            //my rpms logic sensor 1
-
-            xxy=(int.parse(line.substring(41,43),radix:16)).toString();
-
-            xy = (double.tryParse(xxy)! * 2.0 - 90.0)*0.145;  //will pass in to psi1 as string
+                       if(line.substring(41,47)==garbage_data)
+                         {
 
 
-            xxy2= (int.parse(line.substring(43,45),radix:16)).toString();
-            xy2=(double.tryParse(xxy2)! -40); //pass to temprature
 
-            xxy3=(int.parse(line.substring(45,47),radix:16)).toString();
-            xy3=(double.tryParse(xxy3)! *100/127);  //pass to  TPMS battery
+                                xy = 0;  //will pass in to psi1 as string
 
 
+
+                                 xy2=0; //pass to temprature
+
+
+                                 xy3=0;  //pass to  TPMS battery
+                         }
+
+                       else {
+                                xxy = (int.parse(line.substring(41, 43), radix: 16)).toString();
+
+                                xy = (double.tryParse(xxy)! * 2.0 - 90.0) *
+                                 0.145; //will pass in to psi1 as string
+
+
+                                 xxy2 = (int.parse(line.substring(43, 45), radix: 16)).toString();
+                                  xy2 = (double.tryParse(xxy2)! - 40); //pass to temprature
+
+                                    xxy3 = (int.parse(line.substring(45, 47), radix: 16)).toString();
+                                    xy3 = (double.tryParse(xxy3)! * 100 / 127); //pass to  TPMS battery
+
+            }
 
 
            //my tpms logic sensor 2
 
+                       if(line.substring(47,53)==garbage_data)
+                         {
 
-           aab=(int.parse(line.substring(47,49),radix:16)).toString();
-           ab = (double.tryParse(aab)! * 2.0 - 90.0)*0.145;  //will pass in to psi2 as string
+                           ab = 0; //will pass in to psi2 as string
 
-           aab2= (int.parse(line.substring(49,51),radix:16)).toString();
-           ab2=(double.tryParse(aab2)! -40); //pass to temprature2
 
-           aab3=(int.parse(line.substring(51,53),radix:16)).toString();
-           ab3=(double.tryParse(aab3)! *100/127);  //pass to  TPMS battery2
+                           ab2=0; //pass to temprature2
+
+
+                           ab3=0;  //pass to  TPMS battery2
+
+
+                         }
+
+                       else{
+
+
+
+                         aab=(int.parse(line.substring(47,49),radix:16)).toString();
+                         ab = (double.tryParse(aab)! * 2.0 - 90.0)*0.145;  //will pass in to psi2 as string
+
+                         aab2= (int.parse(line.substring(49,51),radix:16)).toString();
+                         ab2=(double.tryParse(aab2)! -40); //pass to temprature2
+
+                         aab3=(int.parse(line.substring(51,53),radix:16)).toString();
+                         ab3=(double.tryParse(aab3)! *100/127);  //pass to  TPMS battery2
+
+
+
+
+                       }
+
+
 
 
 
