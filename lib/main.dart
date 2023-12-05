@@ -523,88 +523,138 @@ class _MyHomePageState extends State<MyHomePage> {
                                           height: 204,
                                           width: 420,
                                           color: Colors.white,
-                                          child: Row(
-                                            mainAxisAlignment:MainAxisAlignment.spaceBetween,
-                                            children: [
+                                           child:  Row(
+                                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                             crossAxisAlignment:CrossAxisAlignment.center,
+                                             children: [
+                                               Column(
+                                                 crossAxisAlignment: CrossAxisAlignment.start,
+                                                 mainAxisAlignment:MainAxisAlignment.center,
+                                                 children: [
+                                                   Text(
+                                                     "Front Tyre",
+                                                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                                                   ),
+                                                   SizedBox(height: 10),
+                                                   // InfoItem(label: 'Pressure', value: '30 psi'), // Replace with actual values
+                                                   // InfoItem(label: 'Temperature', value: '25°C'), // Replace with actual values
+                                                   // InfoItem(label: 'Battery', value: '80%'), // Replace with actual values
+                                                   InfoItem(label: 'Pressure', value: (psi1 != null )? "$psi1 psi":"00000 psi " ?? "0", icon: Icons.speed),
+                                                   InfoItem(
+                                                       label: 'Temperature', value: (temp1 != null )? "$temp1 °C ":"00000 °C " ?? "0", icon: Icons.thermostat),//°C
+                                                   InfoItem(label: 'Battery', value:(tpms_battery != null )? "$tpms_battery %":"00 % " ?? "0", icon: Icons.battery_full),
+                                                 ],
+                                               ),
 
-                                              Column(
-                                                mainAxisAlignment:MainAxisAlignment.spaceBetween,
-                                                crossAxisAlignment:CrossAxisAlignment.start,
-                                                children: [
-                                                  Text((psi1 != null )? "psi1 $psi1 ":"psi1 00000 " ?? "0",),
-                                                  Text((temp1 != null )? "temp1 $temp1 ":"temp1 00000 " ?? "0"),
-                                                  Text((tpms_battery != null )? "tb1 $tpms_battery":"tb1 00000 " ?? "0"),
-                                                ],
-                                              ),
-                                              Column(
+                                               // Icon(Icons.two_wheeler_outlined,size:40,),
 
-                                                children: [
+                                               Column(
+                                                 crossAxisAlignment: CrossAxisAlignment.start,
+                                                 mainAxisAlignment:MainAxisAlignment.center,
+                                                 children: [
+                                                   Row(
+                                                     children: [
+                                                       Text(
+                                                         "Back Tyre",
+                                                         style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                                                       ),
 
-
-                                                  Padding(
-                                                    padding:
-                                                    const EdgeInsets.only(top: 12.0),
-                                                    child: Container(
-                                                      width: 100,
-                                                      height: 100,
-                                                      color: Colors.white,
-                                                      child: const Icon(
-                                                        Icons.music_note,
-                                                        size: 100,
-                                                        color: Colors.blue,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  Text(
-                                                    songTitle,
-                                                    style: const TextStyle(
-                                                        fontSize: 20,
-                                                        fontWeight: FontWeight.bold),
-                                                  ),
-                                                  Text(
-                                                    Movie,
-                                                    style: const TextStyle(
-                                                        fontSize: 16, color: Colors.grey),
-                                                  ),
-                                                  Row(
-                                                    mainAxisAlignment:
-                                                    MainAxisAlignment.spaceEvenly,
-                                                    children: [
-                                                      IconButton(
-                                                        icon: Icon(Icons.skip_previous),
-                                                        onPressed: () {
-                                                          // Implement skip to previous logic
-                                                        },
-                                                      ),
-                                                      IconButton(
-                                                        icon: Icon(Icons.pause),
-                                                        onPressed: () {
-                                                          // Implement pause logic
-                                                        },
-                                                      ),
-                                                      IconButton(
-                                                        icon: Icon(Icons.skip_next),
-                                                        onPressed: () {
-                                                          // Implement skip to next logic
-                                                        },
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ],
-                                              ),
-
-
-                                              Column(
-                                                mainAxisAlignment:MainAxisAlignment.spaceBetween,
-                                                crossAxisAlignment:CrossAxisAlignment.start,
-                                                children: [
-                                                  Text((psi2 != null )? "psi2 $psi2 ":"psi2 00000 " ?? "0",),
-                                                  Text((temp2 != null )? "temp2 $temp2 ":"temp2 00000 " ?? "0",),
-                                                  Text((tpms_battery2 != null )? "tb2 $tpms_battery2 ":"tb2 00000 " ?? "0",),
-                                                ],
-                                              ),
-                                            ],
-                                          ),
+                                                     ],
+                                                   ),
+                                                   SizedBox(height: 10),
+                                                   // InfoItem(label: 'Pressure', value: '30 psi'), // Replace with actual values
+                                                   // InfoItem(label: 'Temperature', value: '25°C'), // Replace with actual values
+                                                   // InfoItem(label: 'Battery', value: '80%'), // Replace with actual values
+                                                   InfoItem(label: 'Pressure', value: (psi2 != null )? "$psi2 psi":"00000 psi " ?? "0", icon: Icons.speed),
+                                                   InfoItem(
+                                                       label: 'Temperature', value: (temp2 != null )? "$temp2 °C ":"00000 °C " ?? "0", icon: Icons.thermostat),//°C
+                                                   InfoItem(label: 'Battery', value:(tpms_battery2 != null )? "$tpms_battery2 %":"00 % " ?? "0", icon: Icons.battery_full),
+                                                 ],
+                                               ),
+                                             ],
+                                           ),
+                                           //Row(
+                                          //   mainAxisAlignment:MainAxisAlignment.spaceBetween,
+                                          //   children: [
+                                          //
+                                          //     Column(
+                                          //       mainAxisAlignment:MainAxisAlignment.spaceBetween,
+                                          //       crossAxisAlignment:CrossAxisAlignment.start,
+                                          //       children: [
+                                              //     Text((psi1 != null )? "psi1 $psi1 ":"psi1 00000 " ?? "0",),
+                                          //         Text((temp1 != null )? "temp1 $temp1 ":"temp1 00000 " ?? "0"),
+                                          //         Text((tpms_battery != null )? "tb1 $tpms_battery":"tb1 00000 " ?? "0"),
+                                          //       ],
+                                          //     ),
+                                          //     Column(
+                                          //
+                                          //       children: [
+                                          //
+                                          //
+                                          //         Padding(
+                                          //           padding:
+                                          //           const EdgeInsets.only(top: 12.0),
+                                          //           child: Container(
+                                          //             width: 100,
+                                          //             height: 100,
+                                          //             color: Colors.white,
+                                          //             child: const Icon(
+                                          //               Icons.music_note,
+                                          //               size: 100,
+                                          //               color: Colors.blue,
+                                          //             ),
+                                          //           ),
+                                          //         ),
+                                          //         Text(
+                                          //           songTitle,
+                                          //           style: const TextStyle(
+                                          //               fontSize: 20,
+                                          //               fontWeight: FontWeight.bold),
+                                          //         ),
+                                          //         Text(
+                                          //           Movie,
+                                          //           style: const TextStyle(
+                                          //               fontSize: 16, color: Colors.grey),
+                                          //         ),
+                                          //         Row(
+                                          //           mainAxisAlignment:
+                                          //           MainAxisAlignment.spaceEvenly,
+                                          //           children: [
+                                          //             IconButton(
+                                          //               icon: Icon(Icons.skip_previous),
+                                          //               onPressed: () {
+                                          //                 // Implement skip to previous logic
+                                          //               },
+                                          //             ),
+                                          //             IconButton(
+                                          //               icon: Icon(Icons.pause),
+                                          //               onPressed: () {
+                                          //                 // Implement pause logic
+                                          //               },
+                                          //             ),
+                                          //             IconButton(
+                                          //               icon: Icon(Icons.skip_next),
+                                          //               onPressed: () {
+                                          //                 // Implement skip to next logic
+                                          //               },
+                                          //             ),
+                                          //           ],
+                                          //         ),
+                                          //       ],
+                                          //     ),
+                                          //
+                                          //
+                                          //     Column(
+                                          //       mainAxisAlignment:MainAxisAlignment.spaceBetween,
+                                          //       crossAxisAlignment:CrossAxisAlignment.start,
+                                          //       children: [
+                                          //         Text((psi2 != null )? "psi2 $psi2 ":"psi2 00000 " ?? "0",),
+                                          //         Text((temp2 != null )? "temp2 $temp2 ":"temp2 00000 " ?? "0",),
+                                          //         Text((tpms_battery2 != null )? "tb2 $tpms_battery2 ":"tb2 00000 " ?? "0",),
+                                          //       ],
+                                          //     ),
+                                          //   ],
+                                          // ),
                                         ),
                                         Row(
                                           children: [
