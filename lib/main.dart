@@ -570,7 +570,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                                      Row(
                                                        children: const [
                                                          Text(
-                                                           "Rear Tyre",
+                                                           " Rear Tyre",
                                                            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                                                          ),
 

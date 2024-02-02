@@ -488,7 +488,7 @@ class _powermode extends State<powermode> {
                                                 Row(
                                                   children: const [
                                                     Text(
-                                                      "Rear Tyre",
+                                                      " Rear Tyre",
                                                       style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                                                     ),
 
