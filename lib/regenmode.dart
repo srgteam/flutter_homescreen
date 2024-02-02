@@ -528,10 +528,10 @@ class _regenmode extends State<regenmode> {
                                               children: [
                                                 Padding(
                                                   padding: const EdgeInsets.only(
-                                                    right: 100,
+                                                    right: 160,
                                                   ),
                                                   child: Text(
-                                                    "Fuel Range ${fuelvalue*600}km"??'0',
+                                                    "DTE ${fuelvalue*600}km"??'0',
                                                     style: const TextStyle(
                                                         fontSize: 24,
                                                         fontWeight:
