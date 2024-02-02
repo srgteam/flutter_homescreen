@@ -545,7 +545,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                                    // InfoItem(label: 'Battery', value: '80%'), // Replace with actual values
                                                    Padding(
                                                      padding: const EdgeInsets.only(left:20.0),
-                                                     child: InfoItem(label: 'Pressure', value: (psi1 != null )? "              $psi1 psi":"00000 psi " ?? "0", icon: Icons.speed),
+                                                     child: InfoItem(label: 'Pressure', value: (psi1 != null )? "             $psi1 psi":"00000 psi " ?? "0", icon: Icons.speed),
                                                    ),
                                                    Padding(
                                                      padding: const EdgeInsets.only(left:20.0),
@@ -554,7 +554,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                                    ),//°C
                                                    Padding(
                                                      padding: const EdgeInsets.only(left:20.0),
-                                                     child: InfoItem(label: 'Battery', value:(tpms_battery != null )? "                $tpms_battery %":"00 % " ?? "0", icon: Icons.battery_full),
+                                                     child: InfoItem(label: 'Battery', value:(tpms_battery != null )? "               $tpms_battery %":"00 % " ?? "0", icon: Icons.battery_full),
                                                    ),
                                                  ],
                                                ),
