@@ -536,7 +536,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                                  mainAxisAlignment:MainAxisAlignment.center,
                                                  children: [
                                                    const Text(
-                                                     "                              Front",
+                                                     "                          Front Tyre",
                                                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                                                    ),
                                                    const SizedBox(height: 10),
@@ -570,7 +570,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                                      Row(
                                                        children: const [
                                                          Text(
-                                                           "    Rear",
+                                                           "  Rear Tyre",
                                                            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                                                          ),
 

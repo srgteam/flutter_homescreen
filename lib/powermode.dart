@@ -454,7 +454,7 @@ class _powermode extends State<powermode> {
                                             mainAxisAlignment:MainAxisAlignment.center,
                                             children: [
                                               const Text(
-                                                "                              Front",
+                                                "                          Front Tyre",
                                                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                                               ),
                                               const SizedBox(height: 10),
@@ -488,7 +488,7 @@ class _powermode extends State<powermode> {
                                                 Row(
                                                   children: const [
                                                     Text(
-                                                      "    Rear",
+                                                      "  Rear Tyre",
                                                       style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                                                     ),
 
