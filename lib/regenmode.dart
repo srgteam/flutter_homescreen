@@ -466,7 +466,7 @@ class _regenmode extends State<regenmode> {
                                             mainAxisAlignment:MainAxisAlignment.center,
                                             children: [
                                               const Text(
-                                                "                                Front Tyre",
+                                                "                          Front Tyre",
                                                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                                               ),
                                               const SizedBox(height: 10),

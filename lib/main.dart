@@ -525,6 +525,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                         Container(
                                           height: 204,
                                           width: 420,
+
                                           color: Colors.white,
                                            child:  Row(
                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -535,7 +536,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                                  mainAxisAlignment:MainAxisAlignment.center,
                                                  children: [
                                                    const Text(
-                                                     "                                Front Tyre",
+                                                     "                          Front Tyre",
                                                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                                                    ),
                                                    const SizedBox(height: 10),
