@@ -15,6 +15,8 @@ import 'main.dart';
 import 'package:intl/intl.dart';
 
 class regenmode extends StatefulWidget {
+  const regenmode({super.key});
+
   @override
   State<regenmode> createState() => _regenmode();
 }
@@ -34,7 +36,7 @@ class _regenmode extends State<regenmode> {
           width: 1024,
           decoration: BoxDecoration(
               color: Colors.lightBlue.shade500,//Colors.black,//Color(0Xff323232),//Color(0Xff7FFFD4),0xffffdbac
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                   topLeft: Radius.elliptical(0, 0),
                   bottomLeft: Radius.elliptical(0, 0),
                   topRight: Radius.elliptical(0, 0),
@@ -44,7 +46,7 @@ class _regenmode extends State<regenmode> {
                 width:2, //Color(0xffff6600),//Color(0xff38eeff),
 
               ),
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                   blurRadius:11,
                   spreadRadius:11,
@@ -72,14 +74,14 @@ class _regenmode extends State<regenmode> {
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                           color: Colors.white,
-                          borderRadius: BorderRadius.only(
+                          borderRadius: const BorderRadius.only(
                               bottomLeft: Radius.elliptical(400, 400),
                               bottomRight: Radius.elliptical(400, 400)),
                           border: Border.all(
                             color: Colors.black26, //Color(0xff38eeff),
                             width: 3,
                           ),
-                          boxShadow: [
+                          boxShadow: const [
                             BoxShadow(
                               blurRadius: 0,
                               spreadRadius: 0,
@@ -95,7 +97,7 @@ class _regenmode extends State<regenmode> {
                             Text(
 
                               DateFormat('EEE d MMM').format(DateTime.now())??'0',
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.black),
@@ -103,14 +105,14 @@ class _regenmode extends State<regenmode> {
 
 
 
-                            Container(
+                            SizedBox(
                               height:45,width:199,
                               child:Image.asset("assets/images/saracalogo2.png",fit:BoxFit.fill,alignment:Alignment.center,),
                             ),
                             Text(
                               DateFormat('HH:mm aa').format(DateTime.now())??'0',
 
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 20,
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold),
@@ -130,7 +132,7 @@ class _regenmode extends State<regenmode> {
                           ),
                   ],
                 ),
-                SizedBox(height: 0),
+
                 SizedBox(
                   height: 50,
                   width: 800,
@@ -139,7 +141,7 @@ class _regenmode extends State<regenmode> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(top: 20),
-                        child: Container(
+                        child: SizedBox(
                           height: 50,
                           width: 50,
                           child: parking_mode == true
@@ -155,7 +157,7 @@ class _regenmode extends State<regenmode> {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 50.0, top: 10),
-                        child: Container(
+                        child: SizedBox(
                           height: 50,
                           width: 50,
                           child: highbeam == true
@@ -171,7 +173,7 @@ class _regenmode extends State<regenmode> {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 50.0, top: 10),
-                        child: Container(
+                        child: SizedBox(
                           height: 50,
                           width: 50,
                           child: hazard == true
@@ -187,7 +189,7 @@ class _regenmode extends State<regenmode> {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 50, top: 10),
-                        child: Container(
+                        child: SizedBox(
                           height: 50,
                           width: 50,
                           child: headlamp == true
@@ -203,7 +205,7 @@ class _regenmode extends State<regenmode> {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 50, top: 10),
-                        child: Container(
+                        child: SizedBox(
                           height: 50,
                           width: 50,
                           child: side_stand == true
@@ -219,7 +221,7 @@ class _regenmode extends State<regenmode> {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 50, top: 0),
-                        child: Container(
+                        child: SizedBox(
                           height: 50,
                           width: 50,
                           child: Text(
@@ -251,7 +253,7 @@ class _regenmode extends State<regenmode> {
                               currentScreenIndex=2;
                               Navigator.push(context,MaterialPageRoute(builder: (context)=>powermode()));
                             },
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.keyboard_double_arrow_left,
                               size: 80,
                               color: Colors.white,
@@ -268,9 +270,9 @@ class _regenmode extends State<regenmode> {
                           width: 800,
                           //here we are doing the box decoration
                           decoration: BoxDecoration(
-                              color: Color(
+                              color: const Color(
                                   0xffeaeaea), //Color(0xffCCCCFF),//Color(0xff38eeff),
-                              borderRadius: BorderRadius.only(
+                              borderRadius: const BorderRadius.only(
                                   topLeft: Radius.circular(800),
                                   bottomLeft: Radius.circular(800),
                                   topRight: Radius.elliptical(100, 100),
@@ -281,7 +283,7 @@ class _regenmode extends State<regenmode> {
                                     width:2, //Color(0xff38eeff),
 
                               ),
-                              boxShadow: [
+                              boxShadow: const [
 
                             BoxShadow(
                             blurRadius:11,
@@ -340,7 +342,7 @@ class _regenmode extends State<regenmode> {
                                           endWidth: 5,
                                         ),
                                       ],
-                                      axisLineStyle: AxisLineStyle(thickness: 40),
+                                      axisLineStyle: const AxisLineStyle(thickness: 40),
                                       pointers: <GaugePointer>[
 
                                         RangePointer(
@@ -359,7 +361,7 @@ class _regenmode extends State<regenmode> {
                                         ) //Color(0xffFCD12A)get_guage_color()
                                       ],
                                       annotations: <GaugeAnnotation>[
-                                        GaugeAnnotation(
+                                        const GaugeAnnotation(
                                           widget: Text(
                                             "Regen",
                                             style: TextStyle(
@@ -373,7 +375,7 @@ class _regenmode extends State<regenmode> {
                                         GaugeAnnotation(
                                           widget: Text(
                                             (parsedSpeed != null && parsedSpeed! >= 200)?"200":parsedSpeed.toString() ?? "0",
-                                            style: TextStyle(
+                                            style: const TextStyle(
                                                 fontSize: 60,
                                                 fontWeight: FontWeight.bold,
                                                 color: Color(0xffFF7417)),
@@ -381,7 +383,7 @@ class _regenmode extends State<regenmode> {
                                           angle: -90,
                                           positionFactor: 0.1,
                                         ),
-                                        GaugeAnnotation(
+                                        const GaugeAnnotation(
                                           widget: Text(
                                             "kmph",
                                             style: TextStyle(
@@ -407,23 +409,23 @@ class _regenmode extends State<regenmode> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Icon(Icons.call,
+                                        const Icon(Icons.call,
                                             size: 40, color: Color(0xff323232)),
-                                        Padding(
+                                        const Padding(
                                           padding:
-                                              const EdgeInsets.only(left: 55.0),
+                                              EdgeInsets.only(left: 55.0),
                                           child: Icon(Icons.message,
                                               size: 40, color: Color(0xff323232)),
                                         ),
-                                        Padding(
+                                        const Padding(
                                           padding:
-                                              const EdgeInsets.only(left: 55.0),
+                                              EdgeInsets.only(left: 55.0),
                                           child: Icon(Icons.bluetooth,
                                               size: 40, color: Color(0xff323232)),
                                         ),
-                                        Padding(
+                                        const Padding(
                                           padding:
-                                              const EdgeInsets.only(left: 55.0),
+                                              EdgeInsets.only(left: 55.0),
                                           child: Icon(Icons.network_cell,
                                               size: 40, color: Color(0xff323232)),
                                         ),
@@ -454,9 +456,8 @@ class _regenmode extends State<regenmode> {
                                     Container(
                                       height: 204,
                                       width: 420,
-                                      //color:Colors.orange,
 
-                                      child: Row(
+                                      child:  Row(
                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                         crossAxisAlignment:CrossAxisAlignment.center,
                                         children: [
@@ -464,159 +465,92 @@ class _regenmode extends State<regenmode> {
                                             crossAxisAlignment: CrossAxisAlignment.start,
                                             mainAxisAlignment:MainAxisAlignment.center,
                                             children: [
-                                              Text(
-                                                "Front Tyre",
+                                              const Text(
+                                                "                                Front Tyre",
                                                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                                               ),
-                                              SizedBox(height: 10),
+                                              const SizedBox(height: 10),
                                               // InfoItem(label: 'Pressure', value: '30 psi'), // Replace with actual values
                                               // InfoItem(label: 'Temperature', value: '25°C'), // Replace with actual values
                                               // InfoItem(label: 'Battery', value: '80%'), // Replace with actual values
-                                              InfoItem(label: 'Pressure', value: (psi1 != null )? "$psi1 psi":"00000 psi " ?? "0", icon: Icons.speed),
-                                              InfoItem(
-                                                  label: 'Temperature', value: (temp1 != null )? "$temp1 °C ":"00000 °C " ?? "0", icon: Icons.thermostat),//°C
-                                              InfoItem(label: 'Battery', value:(tpms_battery != null )? "$tpms_battery %":"00 % " ?? "0", icon: Icons.battery_full),
+                                              Padding(
+                                                padding: const EdgeInsets.only(left:20.0),
+                                                child: InfoItem(label: 'Pressure', value: (psi1 != null )? "               $psi1 psi":"00000 psi " ?? "0", icon: Icons.speed),
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsets.only(left:20.0),
+                                                child: InfoItem(
+                                                    label: 'Temperature', value: (temp1 != null )? "     $temp1 °C ":"00000 °C " ?? "0", icon: Icons.thermostat),
+                                              ),//°C
+                                              Padding(
+                                                padding: const EdgeInsets.only(left:20.0),
+                                                child: InfoItem(label: 'Battery', value:(tpms_battery != null )? "                 $tpms_battery %":"00 % " ?? "0", icon: Icons.battery_full),
+                                              ),
                                             ],
                                           ),
 
-                                         // Icon(Icons.two_wheeler_outlined,size:40,),
+                                          // Icon(Icons.two_wheeler_outlined,size:40,),
 
-                                          Column(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            mainAxisAlignment:MainAxisAlignment.center,
-                                            children: [
-                                              Row(
-                                                children: [
-                                                  Text(
-                                                    "Back Tyre",
-                                                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                                                  ),
+                                          Padding(
+                                            padding: const EdgeInsets.only(right:10),
+                                            child: Column(
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              mainAxisAlignment:MainAxisAlignment.center,
+                                              children: [
+                                                Row(
+                                                  children: const [
+                                                    Text(
+                                                      "Rear Tyre",
+                                                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                                                    ),
 
-                                                ],
-                                              ),
-                                              SizedBox(height: 10),
-                                              // InfoItem(label: 'Pressure', value: '30 psi'), // Replace with actual values
-                                              // InfoItem(label: 'Temperature', value: '25°C'), // Replace with actual values
-                                              // InfoItem(label: 'Battery', value: '80%'), // Replace with actual values
-                                              InfoItem(label: 'Pressure', value: (psi2 != null )? "$psi2 psi":"00000 psi " ?? "0", icon: Icons.speed),
-                                              InfoItem(
-                                                  label: 'Temperature', value: (temp2 != null )? "$temp2 °C ":"00000 °C " ?? "0", icon: Icons.thermostat),//°C
-                                              InfoItem(label: 'Battery', value:(tpms_battery2 != null )? "$tpms_battery2 %":"00 % " ?? "0", icon: Icons.battery_full),
-                                            ],
+                                                  ],
+                                                ),
+                                                const SizedBox(height: 10),
+
+                                                InfoItem(label: '', value: (psi2 != null )? "$psi2 psi":"00000 psi " ?? "0", ),
+                                                InfoItem(
+                                                  label: '', value: (temp2 != null )? "$temp2 °C ":"00000 °C " ?? "0", ),//°C
+                                                InfoItem(label: '', value:(tpms_battery2 != null )? "$tpms_battery2 %":"00 % " ?? "0",),
+                                              ],
+                                            ),
                                           ),
                                         ],
                                       ),
 
-                                      //Row(
-                                      //   mainAxisAlignment:MainAxisAlignment.spaceBetween,
-                                      //   children: [
-                                      //
-                                      //     Column(
-                                      //       mainAxisAlignment:MainAxisAlignment.spaceBetween,
-                                      //       crossAxisAlignment:CrossAxisAlignment.start,
-                                      //       children: [
-                                      //         Text((psi1 != null )? "psi1 $psi1 ":"psi1 00000 " ?? "0"),
-                                      //         Text((temp1 != null )? "temp1 $temp1 ":"temp1 00000 " ?? "0"),
-                                      //         Text((tpms_battery != null )? "tb1 $tpms_battery":"tb1 00000 " ?? "0"),
-                                      //       ],
-                                      //     ),
-                                      //     Column(
-                                      //       children: [
-                                      //
-                                      //
-                                      //         Padding(
-                                      //           padding:
-                                      //           const EdgeInsets.only(top: 12.0),
-                                      //           child: Container(
-                                      //             width: 100,
-                                      //             height: 100,
-                                      //
-                                      //             child: const Icon(
-                                      //               Icons.music_note,
-                                      //               size: 100,
-                                      //               color: Colors.blue,
-                                      //             ),
-                                      //           ),
-                                      //         ),
-                                      //         Text(
-                                      //           songTitle,
-                                      //           style: const TextStyle(
-                                      //               fontSize: 20,
-                                      //               fontWeight: FontWeight.bold),
-                                      //         ),
-                                      //         Text(
-                                      //           Movie,
-                                      //           style: const TextStyle(
-                                      //               fontSize: 16, color: Colors.grey),
-                                      //         ),
-                                      //         Row(
-                                      //           mainAxisAlignment:
-                                      //           MainAxisAlignment.spaceEvenly,
-                                      //           children: [
-                                      //             IconButton(
-                                      //               icon: Icon(Icons.skip_previous),
-                                      //               onPressed: () {
-                                      //                 // Implement skip to previous logic
-                                      //               },
-                                      //             ),
-                                      //             IconButton(
-                                      //               icon: Icon(Icons.pause),
-                                      //               onPressed: () {
-                                      //                 // Implement pause logic
-                                      //               },
-                                      //             ),
-                                      //             IconButton(
-                                      //               icon: Icon(Icons.skip_next),
-                                      //               onPressed: () {
-                                      //                 // Implement skip to next logic
-                                      //               },
-                                      //             ),
-                                      //           ],
-                                      //         ),
-                                      //       ],
-                                      //     ),
-                                      //
-                                      //
-                                      //     Column(
-                                      //       mainAxisAlignment:MainAxisAlignment.spaceBetween,
-                                      //       crossAxisAlignment:CrossAxisAlignment.start,
-                                      //       children: [
-                                      //         Text((psi2 != null )? "psi2 $psi2 ":"psi2 00000 " ?? "0"),
-                                      //         Text((temp2 != null )? "temp2 $temp2 ":"temp2 00000 " ?? "0"),
-                                      //         Text((tpms_battery2 != null )? "tb2 $tpms_battery2 ":"tb2 00000 " ?? "0"),
-                                      //       ],
-                                      //     ),
-                                      //   ],
-                                      // ),
                                     ),
                                     Row(
                                       children: [
-                                        Container(
+                                        SizedBox(
                                             width: 330,
                                             height: 100,
                                             child: Column(
                                               children: [
                                                 Padding(
                                                   padding: const EdgeInsets.only(
-                                                    right: 160,
+                                                    right: 100,
                                                   ),
                                                   child: Text(
-                                                    "DTE ${fuelvalue*600}km",
-                                                    style: TextStyle(
+                                                    "Fuel Range ${fuelvalue*600}km"??'0',
+                                                    style: const TextStyle(
                                                         fontSize: 24,
                                                         fontWeight:
-                                                            FontWeight.bold,
+                                                        FontWeight.bold,
                                                         color: Colors.black87),
                                                   ),
                                                 ),
-                                                Container(
-                                                  height: 50,
-                                                  child: LinearProgressIndicator(
-                                                    value: fuelvalue,
-                                                    valueColor:
-                                                        AlwaysStoppedAnimation(
-                                                            Color(0xffFCD12A)),
-                                                    backgroundColor: Colors.grey,
+                                                Padding(
+                                                  padding: const EdgeInsets.only(right:10),
+                                                  child: SizedBox(
+                                                    height: 50,
+                                                    width:300,
+                                                    child: LinearProgressIndicator(
+                                                      value:fuelvalue ,///
+                                                      valueColor:
+                                                      const AlwaysStoppedAnimation(
+                                                          Color(0xffFCD12A)),
+                                                      backgroundColor: Colors.grey,
+                                                    ),
                                                   ),
                                                 ),
                                               ],
@@ -636,10 +570,10 @@ class _regenmode extends State<regenmode> {
                                               )),
                                         ),
                                         Padding(
-                                          padding: const EdgeInsets.only(top: 20),
+                                          padding: const EdgeInsets.only(top: 20,right:25),
                                           child: Text(
-                                            "${fuelvalue*100}0%" ,
-                                            style: TextStyle(
+                                            "${fuelLevelr*10}%"??'0' ,
+                                            style: const TextStyle(
                                                 fontSize: 17,
                                                 fontWeight: FontWeight.bold,
                                                 color: Colors.black87),
@@ -672,7 +606,7 @@ class _regenmode extends State<regenmode> {
                                     currentScreenIndex=4;
                                     Navigator.push(context,MaterialPageRoute(builder: (context)=>MyHomePage()));
                                   },
-                                  icon: Icon(
+                                  icon: const Icon(
                                     Icons.keyboard_double_arrow_right,
                                     size: 80,
                                     color: Colors.white,
@@ -689,14 +623,9 @@ class _regenmode extends State<regenmode> {
                   height: 30,
                   alignment: Alignment.center,
                   // Set the background color for the container
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [],
-                  ),
+
                 ),
-                SizedBox(
-                  height: 0,
-                ),
+
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -708,20 +637,20 @@ class _regenmode extends State<regenmode> {
 
                         decoration: BoxDecoration(
                             color: Colors.white,
-                            borderRadius: BorderRadius.only(
+                            borderRadius: const BorderRadius.only(
                                 topLeft: Radius.circular(100),
                                 bottomLeft: Radius.circular(100),
                                 topRight: Radius.circular(100),
                                 bottomRight: Radius.circular(100)),
                             border: Border.all(
-                              color: Colors.black26, //Color(0xff38eeff),
+                              color: Colors.black26,
                               width: 3,
                             ),
-                            boxShadow: [
+                            boxShadow: const [
                               BoxShadow(
                                 blurRadius: 0,
                                 spreadRadius: 0,
-                                color: Colors.white, //Color(0xff38eeff),
+                                color: Colors.white,
                               )
                             ]),
 
@@ -730,7 +659,7 @@ class _regenmode extends State<regenmode> {
                           children: [
                             Text(
                               (parsedSpeed != null && parsedSpeed! >= 200)?"Avg Speed 200 km/h":"Avg Speed $speedD km/h"??'0',
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black,
@@ -738,7 +667,7 @@ class _regenmode extends State<regenmode> {
                             ),
                             Text(
                               (odometerr != null )? "ODO $odometerr km":"ODO 00000 km" ?? "0",
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black,
@@ -746,7 +675,7 @@ class _regenmode extends State<regenmode> {
                             ),
                             Text(
                               (rpmr != null )? "RPM $rpmr":"RPM 00000" ?? "0",
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black,
@@ -754,7 +683,7 @@ class _regenmode extends State<regenmode> {
                             ),
                             Text(
                               "Service $serviceDr",
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black,
@@ -788,13 +717,13 @@ class _regenmode extends State<regenmode> {
 class InfoItem extends StatelessWidget {
   final String label;
   final String value;
-  final IconData icon;
+  final IconData? icon;
 
   const InfoItem({
     Key? key,
     required this.label,
     required this.value,
-    required this.icon,
+     this.icon,
   }) : super(key: key);
 
   @override
@@ -811,20 +740,20 @@ class InfoItem extends StatelessWidget {
                 size: 20,
                 color: Colors.blue,
               ),
-              SizedBox(width: 10),
+              const SizedBox(width: 10),
               Text(
                 label,
-                style: TextStyle(
-                  fontSize: 16,
+                style: const TextStyle(
+                  fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  decoration: TextDecoration.underline,
+                  //decoration: TextDecoration.underline,
                 ),
               ),
             ],
           ),
           Text(
             value,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.bold,
             ),

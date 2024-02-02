@@ -34,6 +34,8 @@ void main() {
 ////end of Main function
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
 
   @override
 
@@ -235,7 +237,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(top: 20),
-                            child: Container(
+                            child: SizedBox(
                               height: 50,  //actual size was 40 height width for all indicators
                               width: 50,
                               child: parking_mode == true
@@ -251,7 +253,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                           Padding(
                             padding: const EdgeInsets.only(left: 50.0, top: 10),
-                            child: Container(
+                            child: SizedBox(
                               height: 50,
                               width: 50,
                               child: highbeam == true
@@ -267,7 +269,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                           Padding(
                             padding: const EdgeInsets.only(left: 50.0, top: 10),
-                            child: Container(
+                            child: SizedBox(
                               height: 50,
                               width: 50,
                               child: hazard == true
@@ -283,7 +285,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                           Padding(
                             padding: const EdgeInsets.only(left: 50, top: 10),
-                            child: Container(
+                            child: SizedBox(
                               height: 50,
                               width: 50,
                               child: headlamp == true
@@ -299,7 +301,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                           Padding(
                             padding: const EdgeInsets.only(left: 50, top: 10),
-                            child: Container(
+                            child: SizedBox(
                               height: 50,
                               width: 50,
                               child: side_stand == true
@@ -315,7 +317,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                           Padding(
                             padding: const EdgeInsets.only(left: 50, top: 0),
-                            child: Container(
+                            child: SizedBox(
                               height: 50,
                               width: 50,
                               child: Text(
@@ -531,144 +533,73 @@ class _MyHomePageState extends State<MyHomePage> {
                                                  crossAxisAlignment: CrossAxisAlignment.start,
                                                  mainAxisAlignment:MainAxisAlignment.center,
                                                  children: [
-                                                   Text(
-                                                     "Front Tyre",
+                                                   const Text(
+                                                     "                                Front Tyre",
                                                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                                                    ),
-                                                   SizedBox(height: 10),
+                                                   const SizedBox(height: 10),
                                                    // InfoItem(label: 'Pressure', value: '30 psi'), // Replace with actual values
                                                    // InfoItem(label: 'Temperature', value: '25°C'), // Replace with actual values
                                                    // InfoItem(label: 'Battery', value: '80%'), // Replace with actual values
-                                                   InfoItem(label: 'Pressure', value: (psi1 != null )? "$psi1 psi":"00000 psi " ?? "0", icon: Icons.speed),
-                                                   InfoItem(
-                                                       label: 'Temperature', value: (temp1 != null )? "$temp1 °C ":"00000 °C " ?? "0", icon: Icons.thermostat),//°C
-                                                   InfoItem(label: 'Battery', value:(tpms_battery != null )? "$tpms_battery %":"00 % " ?? "0", icon: Icons.battery_full),
+                                                   Padding(
+                                                     padding: const EdgeInsets.only(left:20.0),
+                                                     child: InfoItem(label: 'Pressure', value: (psi1 != null )? "               $psi1 psi":"00000 psi " ?? "0", icon: Icons.speed),
+                                                   ),
+                                                   Padding(
+                                                     padding: const EdgeInsets.only(left:20.0),
+                                                     child: InfoItem(
+                                                         label: 'Temperature', value: (temp1 != null )? "     $temp1 °C ":"00000 °C " ?? "0", icon: Icons.thermostat),
+                                                   ),//°C
+                                                   Padding(
+                                                     padding: const EdgeInsets.only(left:20.0),
+                                                     child: InfoItem(label: 'Battery', value:(tpms_battery != null )? "                 $tpms_battery %":"00 % " ?? "0", icon: Icons.battery_full),
+                                                   ),
                                                  ],
                                                ),
 
                                                // Icon(Icons.two_wheeler_outlined,size:40,),
 
-                                               Column(
-                                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                                 mainAxisAlignment:MainAxisAlignment.center,
-                                                 children: [
-                                                   Row(
-                                                     children: [
-                                                       Text(
-                                                         "Back Tyre",
-                                                         style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                                                       ),
+                                               Padding(
+                                                 padding: const EdgeInsets.only(right:10),
+                                                 child: Column(
+                                                   crossAxisAlignment: CrossAxisAlignment.start,
+                                                   mainAxisAlignment:MainAxisAlignment.center,
+                                                   children: [
+                                                     Row(
+                                                       children: const [
+                                                         Text(
+                                                           "Rear Tyre",
+                                                           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                                                         ),
 
-                                                     ],
-                                                   ),
-                                                   SizedBox(height: 10),
-                                                   // InfoItem(label: 'Pressure', value: '30 psi'), // Replace with actual values
-                                                   // InfoItem(label: 'Temperature', value: '25°C'), // Replace with actual values
-                                                   // InfoItem(label: 'Battery', value: '80%'), // Replace with actual values
-                                                   InfoItem(label: 'Pressure', value: (psi2 != null )? "$psi2 psi":"00000 psi " ?? "0", icon: Icons.speed),
-                                                   InfoItem(
-                                                       label: 'Temperature', value: (temp2 != null )? "$temp2 °C ":"00000 °C " ?? "0", icon: Icons.thermostat),//°C
-                                                   InfoItem(label: 'Battery', value:(tpms_battery2 != null )? "$tpms_battery2 %":"00 % " ?? "0", icon: Icons.battery_full),
-                                                 ],
+                                                       ],
+                                                     ),
+                                                     const SizedBox(height: 10),
+
+                                                     InfoItem(label: '', value: (psi2 != null )? "$psi2 psi":"00000 psi " ?? "0", ),
+                                                     InfoItem(
+                                                         label: '', value: (temp2 != null )? "$temp2 °C ":"00000 °C " ?? "0", ),//°C
+                                                     InfoItem(label: '', value:(tpms_battery2 != null )? "$tpms_battery2 %":"00 % " ?? "0",),
+                                                   ],
+                                                 ),
                                                ),
                                              ],
                                            ),
-                                           //Row(
-                                          //   mainAxisAlignment:MainAxisAlignment.spaceBetween,
-                                          //   children: [
-                                          //
-                                          //     Column(
-                                          //       mainAxisAlignment:MainAxisAlignment.spaceBetween,
-                                          //       crossAxisAlignment:CrossAxisAlignment.start,
-                                          //       children: [
-                                              //     Text((psi1 != null )? "psi1 $psi1 ":"psi1 00000 " ?? "0",),
-                                          //         Text((temp1 != null )? "temp1 $temp1 ":"temp1 00000 " ?? "0"),
-                                          //         Text((tpms_battery != null )? "tb1 $tpms_battery":"tb1 00000 " ?? "0"),
-                                          //       ],
-                                          //     ),
-                                          //     Column(
-                                          //
-                                          //       children: [
-                                          //
-                                          //
-                                          //         Padding(
-                                          //           padding:
-                                          //           const EdgeInsets.only(top: 12.0),
-                                          //           child: Container(
-                                          //             width: 100,
-                                          //             height: 100,
-                                          //             color: Colors.white,
-                                          //             child: const Icon(
-                                          //               Icons.music_note,
-                                          //               size: 100,
-                                          //               color: Colors.blue,
-                                          //             ),
-                                          //           ),
-                                          //         ),
-                                          //         Text(
-                                          //           songTitle,
-                                          //           style: const TextStyle(
-                                          //               fontSize: 20,
-                                          //               fontWeight: FontWeight.bold),
-                                          //         ),
-                                          //         Text(
-                                          //           Movie,
-                                          //           style: const TextStyle(
-                                          //               fontSize: 16, color: Colors.grey),
-                                          //         ),
-                                          //         Row(
-                                          //           mainAxisAlignment:
-                                          //           MainAxisAlignment.spaceEvenly,
-                                          //           children: [
-                                          //             IconButton(
-                                          //               icon: Icon(Icons.skip_previous),
-                                          //               onPressed: () {
-                                          //                 // Implement skip to previous logic
-                                          //               },
-                                          //             ),
-                                          //             IconButton(
-                                          //               icon: Icon(Icons.pause),
-                                          //               onPressed: () {
-                                          //                 // Implement pause logic
-                                          //               },
-                                          //             ),
-                                          //             IconButton(
-                                          //               icon: Icon(Icons.skip_next),
-                                          //               onPressed: () {
-                                          //                 // Implement skip to next logic
-                                          //               },
-                                          //             ),
-                                          //           ],
-                                          //         ),
-                                          //       ],
-                                          //     ),
-                                          //
-                                          //
-                                          //     Column(
-                                          //       mainAxisAlignment:MainAxisAlignment.spaceBetween,
-                                          //       crossAxisAlignment:CrossAxisAlignment.start,
-                                          //       children: [
-                                          //         Text((psi2 != null )? "psi2 $psi2 ":"psi2 00000 " ?? "0",),
-                                          //         Text((temp2 != null )? "temp2 $temp2 ":"temp2 00000 " ?? "0",),
-                                          //         Text((tpms_battery2 != null )? "tb2 $tpms_battery2 ":"tb2 00000 " ?? "0",),
-                                          //       ],
-                                          //     ),
-                                          //   ],
-                                          // ),
+
                                         ),
                                         Row(
                                           children: [
-                                            Container(
+                                            SizedBox(
                                                 width: 330,
                                                 height: 100,
                                                 child: Column(
                                                   children: [
                                                     Padding(
                                                       padding: const EdgeInsets.only(
-                                                        right: 160,
+                                                        right: 100,
                                                       ),
                                                       child: Text(
-                                                        "DTE ${fuelvalue*600}km"??'0',
+                                                        "Fuel Range ${fuelvalue*600}km"??'0',
                                                         style: const TextStyle(
                                                             fontSize: 24,
                                                             fontWeight:
@@ -676,14 +607,18 @@ class _MyHomePageState extends State<MyHomePage> {
                                                             color: Colors.black87),
                                                       ),
                                                     ),
-                                                    Container(
-                                                      height: 50,
-                                                      child: LinearProgressIndicator(
-                                                        value:fuelvalue ,///
-                                                        valueColor:
-                                                        const AlwaysStoppedAnimation(
-                                                            Color(0xffFCD12A)),
-                                                        backgroundColor: Colors.grey,
+                                                    Padding(
+                                                      padding: const EdgeInsets.only(right:10),
+                                                      child: SizedBox(
+                                                        height: 50,
+                                                        width:300,
+                                                        child: LinearProgressIndicator(
+                                                          value:fuelvalue ,///
+                                                          valueColor:
+                                                          const AlwaysStoppedAnimation(
+                                                              Color(0xffFCD12A)),
+                                                          backgroundColor: Colors.grey,
+                                                        ),
                                                       ),
                                                     ),
                                                   ],
@@ -703,9 +638,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                                   )),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsets.only(top: 20),
+                                              padding: const EdgeInsets.only(top: 20,right:25),
                                               child: Text(
-                                                "${fuelvalue*100}0%"??'0' ,
+                                                "${fuelLevelr*10}%"??'0' ,
                                                 style: const TextStyle(
                                                     fontSize: 17,
                                                     fontWeight: FontWeight.bold,
@@ -757,10 +692,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       height: 30,
                       alignment: Alignment.center,
                       // Set the background color for the container
-                      child:  Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [],
-                      ),
+
                     ),
                     const SizedBox(
                       height: 0,
@@ -785,7 +717,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   color: Colors.grey, //Color(0xff38eeff),
                                   width: 3,
                                 ),
-                                boxShadow: [
+                                boxShadow: const [
                                   BoxShadow(
                                     blurRadius: 0,
                                     spreadRadius: 0,
@@ -798,7 +730,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               children: [
                                 Text(
                                   (parsedSpeed != null && parsedSpeed! >= 200)?"Avg Speed 200 km/h":"Avg Speed ${speedD} km/h"??'0',
-                                  style: TextStyle(   //previous GoogleFonts.roboto
+                                  style: const TextStyle(   //previous GoogleFonts.roboto
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black,
@@ -806,7 +738,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 ),
                                 Text(
                                   (odometerr != null )? "ODO $odometerr km":"ODO 00000 km" ?? "0",
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black,

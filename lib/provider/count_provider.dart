@@ -126,7 +126,7 @@ class count_provider extends ChangeNotifier{
 
          fuelLevelr = int.tryParse(fuelLevelD) ?? 0;
          if (fuelLevelr > 0 && fuelLevelr <= 9) {
-           fuelvalue = fuelLevelr / 10;
+           fuelvalue = (fuelLevelr / 10).ceilToDouble();
          }
          else {
            fuelvalue = 0;
