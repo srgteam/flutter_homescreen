@@ -601,7 +601,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                                         right: 160,
                                                       ),
                                                       child: Text(
-                                                        "DTE ${fuelvalue*600}km"??'0',
+                                                        "DTE ${fuelvalue*60}km"??'0',
                                                         style: const TextStyle(
                                                             fontSize: 24,
                                                             fontWeight:
