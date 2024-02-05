@@ -527,15 +527,15 @@ class _powermode extends State<powermode> {
                                                         color: Colors.black87),
                                                   ),
                                                 ),
-                                                Padding(
-                                                  padding: const EdgeInsets.only(right:10),
+                                                const Padding(
+                                                  padding: EdgeInsets.only(right:10),
                                                   child: SizedBox(
                                                     height: 50,
                                                     width:300,
                                                     child: LinearProgressIndicator(
-                                                      value:fuelvalue ,///
+                                                      value:0.1 ,///
                                                       valueColor:
-                                                      const AlwaysStoppedAnimation(
+                                                      AlwaysStoppedAnimation(
                                                           Color(0xffFCD12A)),
                                                       backgroundColor: Colors.grey,
                                                     ),
