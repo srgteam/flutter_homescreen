@@ -105,9 +105,9 @@ class _regenmode extends State<regenmode> {
 
 
 
-                            const SizedBox(
+                            SizedBox(
                               height:45,width:199,
-                              //child:Image.asset("assets/images/saracalogo2.png",fit:BoxFit.fill,alignment:Alignment.center,),
+                             // child:Image.asset("assets/images/saracalogo2.png",fit:BoxFit.fill,alignment:Alignment.center,),
                             ),
                             Text(
                               DateFormat('HH:mm aa').format(DateTime.now())??'0',
@@ -453,11 +453,70 @@ class _regenmode extends State<regenmode> {
 
 
                                     ///here we will make the data about the tpms
-                                    const SizedBox(
+                                    Container(
                                       height: 204,
                                       width: 420,
 
+                                      child:  Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        crossAxisAlignment:CrossAxisAlignment.center,
+                                        children: [
+                                          Column(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            mainAxisAlignment:MainAxisAlignment.center,
+                                            children: [
+                                              const Text(
+                                                "                          Front Tyre",
+                                                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                                              ),
+                                              const SizedBox(height: 10),
+                                              // InfoItem(label: 'Pressure', value: '30 psi'), // Replace with actual values
+                                              // InfoItem(label: 'Temperature', value: '25°C'), // Replace with actual values
+                                              // InfoItem(label: 'Battery', value: '80%'), // Replace with actual values
+                                              Padding(
+                                                padding: const EdgeInsets.only(left:20.0),
+                                                child: InfoItem(label: 'Pressure', value: (psi1 != null )? "             $psi1 psi":"00000 psi " ?? "0", icon: Icons.speed),
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsets.only(left:20.0),
+                                                child: InfoItem(
+                                                    label: 'Temperature', value: (temp1 != null )? "     $temp1 °C ":"00000 °C " ?? "0", icon: Icons.thermostat),
+                                              ),//°C
+                                              Padding(
+                                                padding: const EdgeInsets.only(left:20.0),
+                                                child: InfoItem(label: 'Battery', value:(tpms_battery != null )? "               $tpms_battery %":"00 % " ?? "0", icon: Icons.battery_full),
+                                              ),
+                                            ],
+                                          ),
 
+                                          // Icon(Icons.two_wheeler_outlined,size:40,),
+
+                                          Padding(
+                                            padding: const EdgeInsets.only(right:10),
+                                            child: Column(
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              mainAxisAlignment:MainAxisAlignment.center,
+                                              children: [
+                                                Row(
+                                                  children: const [
+                                                    Text(
+                                                      "  Rear Tyre",
+                                                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                                                    ),
+
+                                                  ],
+                                                ),
+                                                const SizedBox(height: 10),
+
+                                                InfoItem(label: '', value: (psi2 != null )? "$psi2 psi":"00000 psi " ?? "0", ),
+                                                InfoItem(
+                                                  label: '', value: (temp2 != null )? "$temp2 °C ":"00000 °C " ?? "0", ),//°C
+                                                InfoItem(label: '', value:(tpms_battery2 != null )? "$tpms_battery2 %":"00 % " ?? "0",),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
 
                                     ),
                                     Row(
