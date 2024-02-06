@@ -48,14 +48,15 @@ class _splash_screen extends State<splash_screen> {
                 opacity: _visible ? 1.0 : 0.0,
                 duration: Duration(milliseconds: 3000),
                 child: _visible
-                    ? Image.asset(
-                  "assets/images/saracalogo2.png",
+                    ?  Container(
+                  color:Colors.blue,
+
                   height: 500,
                   width: 1024,
                 )
                     : Container(color: Colors.white),
               ),
-              Text(
+              const Text(
                 "READY TO RIDE",
                 style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
               ),

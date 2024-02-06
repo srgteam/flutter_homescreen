@@ -201,9 +201,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
 
-                                Container(
+                                const SizedBox(
                                   height:45,width:199,
-                                  child:Image.asset("assets/images/saracalogo2.png",fit:BoxFit.fill,alignment:Alignment.center,),
+
                                 ),
                                 Text(
                                   DateFormat('HH:mm aa').format(DateTime.now())??'0',
@@ -522,71 +522,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                             ),
                                           ],
                                         ),
-                                        Container(
+                                        const SizedBox(
                                           height: 204,
                                           width: 420,
 
-                                          color: Colors.white,
-                                           child:  Row(
-                                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                             crossAxisAlignment:CrossAxisAlignment.center,
-                                             children: [
-                                               Column(
-                                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                                 mainAxisAlignment:MainAxisAlignment.center,
-                                                 children: [
-                                                   const Text(
-                                                     "                          Front Tyre",
-                                                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                                                   ),
-                                                   const SizedBox(height: 10),
-                                                   // InfoItem(label: 'Pressure', value: '30 psi'), // Replace with actual values
-                                                   // InfoItem(label: 'Temperature', value: '25°C'), // Replace with actual values
-                                                   // InfoItem(label: 'Battery', value: '80%'), // Replace with actual values
-                                                   Padding(
-                                                     padding: const EdgeInsets.only(left:20.0),
-                                                     child: InfoItem(label: 'Pressure', value: (psi1 != null )? "             $psi1 psi":"00000 psi " ?? "0", icon: Icons.speed),
-                                                   ),
-                                                   Padding(
-                                                     padding: const EdgeInsets.only(left:20.0),
-                                                     child: InfoItem(
-                                                         label: 'Temperature', value: (temp1 != null )? "     $temp1 °C ":"00000 °C " ?? "0", icon: Icons.thermostat),
-                                                   ),//°C
-                                                   Padding(
-                                                     padding: const EdgeInsets.only(left:20.0),
-                                                     child: InfoItem(label: 'Battery', value:(tpms_battery != null )? "               $tpms_battery %":"00 % " ?? "0", icon: Icons.battery_full),
-                                                   ),
-                                                 ],
-                                               ),
 
-                                               // Icon(Icons.two_wheeler_outlined,size:40,),
-
-                                               Padding(
-                                                 padding: const EdgeInsets.only(right:10),
-                                                 child: Column(
-                                                   crossAxisAlignment: CrossAxisAlignment.start,
-                                                   mainAxisAlignment:MainAxisAlignment.center,
-                                                   children: [
-                                                     Row(
-                                                       children: const [
-                                                         Text(
-                                                           "  Rear Tyre",
-                                                           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                                                         ),
-
-                                                       ],
-                                                     ),
-                                                     const SizedBox(height: 10),
-
-                                                     InfoItem(label: '', value: (psi2 != null )? "$psi2 psi":"00000 psi " ?? "0", ),
-                                                     InfoItem(
-                                                         label: '', value: (temp2 != null )? "$temp2 °C ":"00000 °C " ?? "0", ),//°C
-                                                     InfoItem(label: '', value:(tpms_battery2 != null )? "$tpms_battery2 %":"00 % " ?? "0",),
-                                                   ],
-                                                 ),
-                                               ),
-                                             ],
-                                           ),
 
                                         ),
                                         Row(
@@ -675,7 +615,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                       onPressed: () {
                                         currentScreenIndex=2;
                                         Navigator.of(context).pushReplacementNamed('/second');
-                                        Navigator.push(context,MaterialPageRoute(builder: (context)=>powermode()));
+                                        Navigator.push(context,MaterialPageRoute(builder: (context)=>const powermode()));
                                       },
                                       icon: const Icon(
                                         Icons.keyboard_double_arrow_right,
@@ -731,7 +671,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
                                 Text(
-                                  (parsedSpeed != null && parsedSpeed! >= 200)?"Avg Speed 200 km/h":"Avg Speed ${speedD} km/h"??'0',
+                                  (parsedSpeed != null && parsedSpeed! >= 200)?"Avg Speed 200 km/h":"Avg Speed $speedD km/h"??'0',
                                   style: const TextStyle(   //previous GoogleFonts.roboto
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
